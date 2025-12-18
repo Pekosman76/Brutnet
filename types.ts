@@ -1,16 +1,8 @@
 
-export type StatusType = 'non-cadre' | 'cadre' | 'public' | 'portage';
+// Définitions des types pour les calculs de salaire et revenus entrepreneur
+export type StatusType = 'non-cadre' | 'cadre' | 'public' | 'profession-liberale';
 
-export interface SalaryData {
-  brut: number;
-  period: 'mensuel' | 'annuel';
-  status: StatusType;
-  tempsTravail: number;
-  mois: number;
-  tauxPrelevement: number;
-}
-
-export type RegimeType = 'bnc' | 'bic-services' | 'bic-vente' | 'liberal';
+export type RegimeType = 'bnc' | 'bic-vente' | 'bic-service';
 
 export interface EntrepreneurData {
   ca: number;

@@ -1,30 +1,29 @@
 
-import React from 'react';
+// Constantes et taux de cotisations sociales (estimations 2025)
+import { StatusType, RegimeType } from './types';
 
-export const CHARGES_RATES = {
+export const CHARGES_RATES: Record<StatusType, number> = {
   'non-cadre': 0.22,
   'cadre': 0.25,
   'public': 0.15,
-  'portage': 0.48, // Estimation moyenne incluant frais de gestion
+  'profession-liberale': 0.22,
 };
 
-export const ENTREPRENEUR_RATES = {
-  'bnc': 0.261, // Actualisé à 26,1% selon demande
-  'bic-services': 0.212,
+export const STATUS_LABELS: Record<StatusType, string> = {
+  'non-cadre': 'Salarié non-cadre',
+  'cadre': 'Salarié cadre',
+  'public': 'Fonctionnaire / Public',
+  'profession-liberale': 'Profession Libérale',
+};
+
+export const ENTREPRENEUR_RATES: Record<RegimeType, number> = {
+  'bnc': 0.211,
   'bic-vente': 0.123,
-  'liberal': 0.45, // Estimation libéral classique (hors auto-entrepreneur)
+  'bic-service': 0.212,
 };
 
-export const REGIME_LABELS = {
-  'bnc': 'Auto-Entrepreneur BNC (Libéral)',
-  'bic-services': 'Auto-Entrepreneur BIC Services',
-  'bic-vente': 'Auto-Entrepreneur BIC Vente',
-  'liberal': 'Profession Libérale (Estimation)'
-};
-
-export const STATUS_LABELS = {
-  'non-cadre': 'Salarié Non-Cadre',
-  'cadre': 'Salarié Cadre',
-  'public': 'Fonction Publique',
-  'portage': 'Portage Salarial'
+export const REGIME_LABELS: Record<RegimeType, string> = {
+  'bnc': 'Prestations de services (BNC)',
+  'bic-service': 'Prestations de services (BIC)',
+  'bic-vente': 'Vente de marchandises (BIC)',
 };

@@ -1,5 +1,5 @@
 {
   "name": "CalculRevenuNet.fr",
-  "description": "Simulateur professionnel de conversion salaire brut en net en France pour salariés et entrepreneurs.",
+  "description": "Simulateur professionnel statique de conversion salaire brut en net en France.",
   "requestFramePermissions": []
 }
