@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -75,46 +74,42 @@
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
         <div class="text-center mb-10">
-            <h1 id="main-h1" class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Calculateur Salaire Brut en Net</h1>
-            <p id="main-p" class="text-lg text-slate-600 max-w-2xl mx-auto">Estimation gratuite de vos revenus après charges pour 2025.</p>
+            <h1 id="main-h1" class="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">Simulateur de Revenus 2025</h1>
+            <p id="main-p" class="text-lg text-slate-600 max-w-2xl mx-auto">Calculez vos revenus réels après charges et impôts en quelques clics.</p>
         </div>
 
-        <!-- Onglets Principaux -->
         <div id="tab-container" class="flex p-1 bg-slate-200/50 rounded-2xl w-full max-w-md mx-auto mb-12 shadow-inner">
             <button id="tab-salarie" onclick="setTab('salarie')" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 tab-active">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
                 Salarié
             </button>
             <button id="tab-entrepreneur" onclick="setTab('entrepreneur')" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 tab-inactive">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd" /></svg>
                 Entrepreneur
             </button>
         </div>
 
-        <!-- SECTION CALCULATEURS -->
         <div id="calculator-view">
             <!-- SALARIÉ -->
             <section id="salarie-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-xl font-bold text-slate-900">Calculateur Salaire</h2>
-                        <button onclick="resetSalary()" class="text-xs font-bold text-slate-400 hover:text-blue-600 uppercase tracking-wider">Reset</button>
+                        <h2 class="text-xl font-bold text-slate-900">Salaire Brut / Net</h2>
+                        <button onclick="resetSalary()" class="text-xs font-bold text-slate-400 hover:text-blue-600 uppercase">Reset</button>
                     </div>
                     <div class="space-y-6">
                         <div>
                             <label class="block text-sm font-bold text-slate-700 mb-2">Salaire Brut</label>
                             <div class="flex">
-                                <input id="sal-brut" type="number" oninput="handleSalaryBrutChange()" class="flex-1 border-2 border-slate-200 rounded-l-2xl px-5 py-4 focus:border-blue-500 focus:outline-none font-bold text-xl transition-colors shadow-sm" value="35000">
-                                <select id="sal-period" onchange="handleSalaryChange()" class="bg-slate-50 border-2 border-l-0 border-slate-200 rounded-r-2xl px-3 py-2 text-sm font-bold focus:outline-none focus:border-blue-500">
+                                <input id="sal-brut" type="number" oninput="handleSalaryBrutChange()" class="flex-1 border-2 border-slate-200 rounded-l-2xl px-5 py-4 focus:border-blue-500 focus:outline-none font-bold text-xl" value="35000">
+                                <select id="sal-period" onchange="handleSalaryChange()" class="bg-slate-50 border-2 border-l-0 border-slate-200 rounded-r-2xl px-3 py-2 text-sm font-bold">
                                     <option value="annuel">€ / an</option>
                                     <option value="mensuel">€ / mois</option>
                                 </select>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Salaire Net</label>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Salaire Net (Avant impôt)</label>
                             <div class="flex">
-                                <input id="sal-net" type="number" oninput="handleSalaryNetChange()" class="flex-1 border-2 border-slate-200 rounded-l-2xl px-5 py-4 focus:border-blue-500 focus:outline-none font-bold text-xl transition-colors shadow-sm bg-slate-50/30" value="27300">
+                                <input id="sal-net" type="number" oninput="handleSalaryNetChange()" class="flex-1 border-2 border-slate-200 rounded-l-2xl px-5 py-4 focus:border-blue-500 focus:outline-none font-bold text-xl bg-slate-50/30" value="27300">
                                 <div class="bg-slate-50 border-2 border-l-0 border-slate-200 rounded-r-2xl text-sm font-bold flex items-center text-slate-400 px-4" id="sal-net-unit">€ / an</div>
                             </div>
                         </div>
@@ -145,223 +140,133 @@
                     </div>
                 </div>
                 <div class="sticky top-24">
-                    <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
-                        <div class="relative z-10 text-center">
-                            <p class="text-blue-100 font-bold mb-2 uppercase tracking-widest text-xs">Net mensuel après impôt</p>
-                            <div id="sal-res-net-mensuel" class="text-6xl font-black mb-6">2 161 €</div>
-                            <div class="h-px bg-white/20 w-full mb-6"></div>
-                            <div class="grid grid-cols-2 gap-4 mb-8">
-                                <div><p class="text-[10px] text-blue-200 font-bold mb-1">BRUT MENSUEL</p><p id="sal-res-brut" class="text-xl font-bold">2 917 €</p></div>
-                                <div><p class="text-[10px] text-blue-200 font-bold mb-1">NET ANNUEL</p><p id="sal-res-net-annuel" class="text-xl font-bold">25 935 €</p></div>
-                            </div>
-                            <button onclick="copySalaryResult()" class="w-full bg-white text-blue-600 font-black py-4 rounded-2xl shadow-lg hover:bg-blue-50 transition-all active:scale-95">Copier le résultat</button>
+                    <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
+                        <p class="text-blue-100 font-bold mb-2 uppercase tracking-widest text-xs">Net mensuel après impôt</p>
+                        <div id="sal-res-net-mensuel" class="text-6xl font-black mb-6">2 161 €</div>
+                        <div class="h-px bg-white/20 w-full mb-6"></div>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div><p class="text-[10px] text-blue-200 font-bold mb-1 uppercase">Brut mensuel</p><p id="sal-res-brut" class="text-xl font-bold">2 917 €</p></div>
+                            <div><p class="text-[10px] text-blue-200 font-bold mb-1 uppercase">Net annuel avant impôt</p><p id="sal-res-net-annuel-avant" class="text-xl font-bold">27 300 €</p></div>
                         </div>
-                        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-6 border border-white/10">
+                            <p class="text-[10px] text-blue-100 font-bold uppercase tracking-widest mb-1">Net annuel après impôt</p>
+                            <p id="sal-res-net-annuel-apres" class="text-2xl font-black text-white">25 935 €</p>
+                        </div>
+                        <button onclick="copySalaryResult()" class="w-full bg-white text-blue-600 font-black py-4 rounded-2xl shadow-lg hover:bg-blue-50 active:scale-95 transition-all">Copier le résultat</button>
                     </div>
                 </div>
             </section>
 
             <!-- ENTREPRENEUR -->
-            <section id="entrepreneur-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-8 hidden">
+            <section id="entrepreneur-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-8 hidden items-start">
                 <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200">
                     <h2 class="text-xl font-bold mb-6 text-slate-900">Chiffre d'Affaires</h2>
                     <div class="space-y-6">
                         <div class="flex p-1 bg-slate-100 rounded-xl">
-                            <button id="ent-period-mensuel" onclick="setEntPeriod('mensuel')" class="flex-1 py-2 text-sm font-bold rounded-lg transition-all bg-white text-indigo-600 shadow-sm">Mensuel</button>
-                            <button id="ent-period-annuel" onclick="setEntPeriod('annuel')" class="flex-1 py-2 text-sm font-bold rounded-lg transition-all text-slate-500">Annuel</button>
+                            <button id="ent-period-mensuel" onclick="setEntPeriod('mensuel')" class="flex-1 py-2 text-sm font-bold rounded-lg transition-all text-slate-500">Mensuel</button>
+                            <button id="ent-period-annuel" onclick="setEntPeriod('annuel')" class="flex-1 py-2 text-sm font-bold rounded-lg transition-all bg-white text-indigo-600 shadow-sm">Annuel</button>
                         </div>
                         <div>
-                            <label id="ent-ca-label" class="block text-sm font-bold text-slate-700 mb-2">Montant du CA (€/mois)</label>
-                            <input id="ent-ca" type="number" oninput="handleEntChange()" class="w-full border-2 border-slate-200 rounded-2xl px-5 py-4 focus:border-indigo-500 focus:outline-none font-bold text-xl shadow-sm" value="3000">
+                            <label id="ent-ca-label" class="block text-sm font-bold text-slate-700 mb-2">Montant du CA (€/an)</label>
+                            <input id="ent-ca" type="number" oninput="handleEntChange()" class="w-full border-2 border-slate-200 rounded-2xl px-5 py-4 focus:border-indigo-500 focus:outline-none font-bold text-xl shadow-sm" value="60000">
                         </div>
                         <div>
-                            <label class="block text-sm font-bold text-slate-700 mb-2">Activité</label>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Activité / Régime</label>
                             <select id="ent-regime" onchange="handleEntChange()" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-700 bg-white">
-                                <option value="bnc">Libéral (BNC)</option>
-                                <option value="bic-services">Services (BIC)</option>
-                                <option value="bic-vente">Vente (BIC)</option>
+                                <option value="bnc">Libéral (BNC - 34% abattement)</option>
+                                <option value="bic-services">Services (BIC - 50% abattement)</option>
+                                <option value="bic-vente">Vente (BIC - 71% abattement)</option>
                             </select>
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-6">
-                    <div class="bg-indigo-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden flex flex-col justify-between h-full">
-                        <div class="relative z-10 text-center">
-                            <p id="ent-res-period" class="text-indigo-100 font-bold mb-2 uppercase tracking-widest text-xs">Revenu Net mensuel Estimé</p>
-                            <div id="ent-res-net" class="text-6xl font-black mb-10">2 217 €</div>
-                            <div class="grid grid-cols-2 gap-6 border-t border-indigo-400/30 pt-8">
-                                <div><p class="text-xs text-indigo-200 font-bold mb-1">URSSAF</p><p id="ent-res-rate" class="text-2xl font-black">-21.1%</p></div>
-                                <div><p class="text-xs text-indigo-200 font-bold mb-1">RESTE</p><p id="ent-res-cotis" class="text-2xl font-black">783 €</p></div>
+                <div class="sticky top-24">
+                    <div class="bg-indigo-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
+                        <p id="ent-res-period-label" class="text-indigo-100 font-bold mb-2 uppercase tracking-widest text-xs">Revenu net après URSSAF</p>
+                        <div id="ent-res-net" class="text-6xl font-black mb-10">3 945 €</div>
+                        
+                        <div class="grid grid-cols-2 gap-4 border-t border-indigo-400/30 pt-8 mb-6">
+                            <div class="text-left">
+                                <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">URSSAF (%)</p>
+                                <p id="ent-res-rate" class="text-xl font-black">-21.1%</p>
                             </div>
-                            <button onclick="copyEntResult()" class="w-full bg-white text-indigo-600 font-black py-4 rounded-2xl shadow-lg mt-8 active:scale-95 transition-all">Copier ce résultat</button>
+                            <div class="text-left">
+                                <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">URSSAF (€)</p>
+                                <p id="ent-res-cotis-euro" class="text-xl font-black">1 055 €</p>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">Revenu imposable</p>
+                                <p id="ent-res-imposable" class="text-xl font-black">3 300 €</p>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">Impôt estimé</p>
+                                <p id="ent-res-impot-detail" class="text-xl font-black">420 €</p>
+                            </div>
                         </div>
-                        <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8 border border-white/10">
+                            <p class="text-[10px] text-indigo-100 font-bold uppercase tracking-widest mb-1">Revenu net final (après impôt)</p>
+                            <div id="ent-res-net-apres-impot" class="text-4xl font-black text-white">3 525 €</div>
+                            <p class="text-[9px] text-indigo-100/70 mt-3 italic leading-tight">Estimation basée sur le barème progressif pour une personne seule sans enfant.</p>
+                        </div>
+
+                        <button onclick="copyEntResult()" class="w-full bg-white text-indigo-600 font-black py-4 rounded-2xl shadow-lg active:scale-95 transition-all">Copier ce résultat</button>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- SECTIONS D'INFORMATION / SEO -->
         <div id="info-section-container" class="mt-16">
-            
-            <!-- CONTENU SALARIÉ (6 SECTIONS) -->
             <div id="info-salarie" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">1. Le salaire brut</h3>
-                    <p class="text-sm text-slate-600 mb-4">Le brut est le montant avant déduction des charges. C'est votre valeur sur le marché du travail.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Base de négociation du contrat</li>
-                        <li>Référence pour les droits retraite</li>
-                    </ul>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Le salaire brut</h3>
+                    <p class="text-sm text-slate-600">Le brut est le montant avant déduction des charges sociales salariales. C'est la base de négociation.</p>
                 </article>
                 <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">2. Le salaire net</h3>
-                    <p class="text-sm text-slate-600 mb-4">C'est la somme virée sur votre compte chaque mois, votre pouvoir d'achat réel.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Net à payer avant impôt</li>
-                        <li>Net après impôt (revenu final)</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">3. Pourquoi le brut est-il plus élevé ?</h3>
-                    <p class="text-sm text-slate-600 mb-4">L'écart correspond aux cotisations sociales qui financent votre protection.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Assurance Santé & Retraite</li>
-                        <li>Assurance Chômage</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">4. Prélèvement à la source</h3>
-                    <p class="text-sm text-slate-600 mb-4">L'impôt est collecté directement sur votre paie selon un taux personnalisé.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Évite les régularisations brutales</li>
-                        <li>S'adapte à votre situation familiale</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">5. Différences selon le statut</h3>
-                    <p class="text-sm text-slate-600 mb-4">Les taux de charges varient selon votre convention et votre poste.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Cadre (env. 25% de charges)</li>
-                        <li>Non-Cadre (env. 22% de charges)</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">6. Exemple de conversion</h3>
-                    <p class="text-sm text-slate-600 mb-4">Pour 2500€ brut, un non-cadre touchera environ 1950€ net avant impôt.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Estimation indicative (2025)</li>
-                        <li>Varie selon les mutuelles</li>
-                    </ul>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Le salaire net</h3>
+                    <p class="text-sm text-slate-600">Le net à payer est ce que vous percevez réellement après cotisations mais avant impôt.</p>
                 </article>
             </div>
-
-            <!-- CONTENU ENTREPRENEUR (6 SECTIONS) -->
             <div id="info-entrepreneur" class="grid grid-cols-1 md:grid-cols-2 gap-6 hidden">
                 <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">1. Chiffre d’affaires</h3>
-                    <p class="text-sm text-slate-600 mb-4">C'est le total des factures encaissées. Attention, ce n'est pas votre revenu personnel.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Montant brut encaissé</li>
-                        <li>Plafonds annuels à respecter</li>
-                    </ul>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Chiffre d'Affaires</h3>
+                    <p class="text-sm text-slate-600">Total des sommes encaissées. Le revenu net est calculé après déduction des cotisations URSSAF.</p>
                 </article>
                 <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">2. Revenu net auto-entrepreneur</h3>
-                    <p class="text-sm text-slate-600 mb-4">C'est ce qui reste après avoir payé les charges URSSAF et vos frais pro.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Estimation après cotisations</li>
-                        <li>Base pour vos impôts personnels</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">3. BNC et BIC</h3>
-                    <p class="text-sm text-slate-600 mb-4">Le régime dépend de votre métier : services ou vente de produits.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>BNC : Consultants, Free-lance</li>
-                        <li>BIC : Commerçants, Artisans</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">4. Cotisations et charges</h3>
-                    <p class="text-sm text-slate-600 mb-4">Les charges URSSAF sont calculées sur un pourcentage fixe de votre CA.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Pas de CA = Pas de charges</li>
-                        <li>Paiement mensuel ou trimestriel</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">5. Différences avec un salarié</h3>
-                    <p class="text-sm text-slate-600 mb-4">Pas de fiche de paie ni de congés payés. Vous gérez votre propre trésorerie.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Liberté d'organisation totale</li>
-                        <li>Responsabilité fiscale accrue</li>
-                    </ul>
-                </article>
-                <article class="section-card">
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">6. Exemple de revenu net</h3>
-                    <p class="text-sm text-slate-600 mb-4">Pour 3000€ de CA en libéral, il vous restera environ 2367€ après URSSAF.</p>
-                    <ul class="text-sm text-slate-600 space-y-2 list-disc pl-4">
-                        <li>Hors frais de fonctionnement</li>
-                        <li>Estimation basée sur 21.1%</li>
-                    </ul>
+                    <h3 class="text-lg font-bold text-slate-900 mb-3">Fiscalité Micro-Entreprise</h3>
+                    <p class="text-sm text-slate-600">L'impôt est calculé sur le CA après un abattement forfaitaire dépendant de votre activité.</p>
                 </article>
             </div>
         </div>
-
-        <div id="back-to-calc" class="mt-12 text-center hidden">
-            <button onclick="showView('calculator')" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition-all">Retour au calculateur</button>
-        </div>
     </main>
-
-    <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-center text-slate-500 text-sm">
-        <p>© 2025 CalculRevenuNet.fr – Estimation non contractuelle.</p>
-    </footer>
 
     <script>
         const CHARGES_RATES = { 'non-cadre': 0.22, 'cadre': 0.25, 'public': 0.15 };
         const ENTREPRENEUR_RATES = { 'bnc': 0.211, 'bic-services': 0.212, 'bic-vente': 0.123 };
+        
         let activeTab = 'salarie';
         let currentView = 'calculator';
-        let entPeriod = 'mensuel';
+        let entPeriod = 'annuel';
 
         function showView(view) {
             currentView = view;
             document.getElementById('nav-home').className = `transition-colors py-2 border-b-2 ${view === 'calculator' ? 'view-active' : 'view-inactive'}`;
             document.getElementById('nav-info').className = `transition-colors py-2 border-b-2 ${view === 'info' ? 'view-active' : 'view-inactive'}`;
-            
-            if (view === 'calculator') {
-                document.getElementById('calculator-view').classList.remove('hidden');
-                document.getElementById('back-to-calc').classList.add('hidden');
-                document.getElementById('main-h1').innerText = activeTab === 'salarie' ? 'Calculateur Salaire Brut en Net' : 'Revenu Auto-Entrepreneur Net';
-            } else {
-                document.getElementById('calculator-view').classList.add('hidden');
-                document.getElementById('back-to-calc').classList.remove('hidden');
-                document.getElementById('main-h1').innerText = 'Aide & Informations';
-            }
             refreshDisplay();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function setTab(tab) {
             activeTab = tab;
             document.getElementById('tab-salarie').className = `flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 ${tab === 'salarie' ? 'tab-active' : 'tab-inactive'}`;
             document.getElementById('tab-entrepreneur').className = `flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 ${tab === 'entrepreneur' ? 'tab-active' : 'tab-inactive'}`;
-            if (currentView === 'calculator') {
-                document.getElementById('main-h1').innerText = tab === 'salarie' ? 'Calculateur Salaire Brut en Net' : 'Revenu Auto-Entrepreneur Net';
-            }
             refreshDisplay();
             if (tab === 'salarie') handleSalaryChange(); else handleEntChange();
         }
 
         function refreshDisplay() {
             const isSalarie = activeTab === 'salarie';
-            // Calculateurs
-            if (currentView === 'calculator') {
-                document.getElementById('salarie-calculator').classList.toggle('hidden', !isSalarie);
-                document.getElementById('entrepreneur-calculator').classList.toggle('hidden', isSalarie);
-            }
-            // Informations (Synchro totale avec l'onglet)
+            document.getElementById('salarie-calculator').classList.toggle('hidden', !isSalarie);
+            document.getElementById('entrepreneur-calculator').classList.toggle('hidden', isSalarie);
             document.getElementById('info-salarie').classList.toggle('hidden', !isSalarie);
             document.getElementById('info-entrepreneur').classList.toggle('hidden', isSalarie);
         }
@@ -387,32 +292,41 @@
         }
 
         function handleSalaryChange() {
-            const brutVal = parseFloat(document.getElementById('sal-brut').value) || 0;
+            const brut = parseFloat(document.getElementById('sal-brut').value) || 0;
             const netVal = parseFloat(document.getElementById('sal-net').value) || 0;
             const period = document.getElementById('sal-period').value;
             const mois = parseInt(document.getElementById('sal-mois').value) || 12;
             const taxRate = parseFloat(document.getElementById('sal-impot-input').value) || 0;
             
-            const netAnnuel = period === 'annuel' ? netVal : netVal * mois;
-            const netMensuel = netAnnuel / mois;
-            const apresImpotMensuel = netMensuel * (1 - taxRate / 100);
-            const brutMensuel = (period === 'annuel' ? brutVal : brutVal * mois) / mois;
+            document.getElementById('sal-net-unit').innerText = period === 'annuel' ? '€ / an' : '€ / mois';
+            
+            let netAnnuel, netMensuel, brutMensuel;
+            if (period === 'annuel') {
+                netAnnuel = netVal;
+                netMensuel = netAnnuel / mois;
+                brutMensuel = brut / mois;
+            } else {
+                netMensuel = netVal;
+                netAnnuel = netMensuel * mois;
+                brutMensuel = brut;
+            }
 
-            document.getElementById('sal-res-net-mensuel').innerText = Math.round(apresImpotMensuel).toLocaleString() + ' €';
+            const netApresImpotMensuel = netMensuel * (1 - taxRate / 100);
+            const netApresImpotAnnuel = netAnnuel * (1 - taxRate / 100);
+
+            document.getElementById('sal-res-net-mensuel').innerText = Math.round(netApresImpotMensuel).toLocaleString() + ' €';
             document.getElementById('sal-res-brut').innerText = Math.round(brutMensuel).toLocaleString() + ' €';
-            document.getElementById('sal-res-net-annuel').innerText = Math.round(netAnnuel * (1 - taxRate/100)).toLocaleString() + ' €';
+            document.getElementById('sal-res-net-annuel-avant').innerText = Math.round(netAnnuel).toLocaleString() + ' €';
+            document.getElementById('sal-res-net-annuel-apres').innerText = Math.round(netApresImpotAnnuel).toLocaleString() + ' €';
         }
 
         function resetSalary() {
             document.getElementById('sal-brut').value = 35000;
-            document.getElementById('sal-status').value = 'non-cadre';
-            document.getElementById('sal-mois').value = 12;
-            document.getElementById('sal-impot-input').value = 5.0;
             handleSalaryBrutChange();
         }
 
         function copySalaryResult() {
-            navigator.clipboard.writeText("Salaire net : " + document.getElementById('sal-res-net-mensuel').innerText);
+            navigator.clipboard.writeText("Net mensuel après impôt : " + document.getElementById('sal-res-net-mensuel').innerText);
             alert("Copié !");
         }
 
@@ -425,24 +339,77 @@
             handleEntChange();
         }
 
-        function handleEntChange() {
-            const ca = parseFloat(document.getElementById('ent-ca').value) || 0;
-            const regime = document.getElementById('ent-regime').value;
-            const rate = ENTREPRENEUR_RATES[regime];
-            const cotis = ca * rate;
-            const net = ca - cotis;
+        function calculateIncomeTax(taxableIncome) {
+            let tax = 0;
+            let currentIncome = taxableIncome;
+            let prevLimit = 0;
             
-            document.getElementById('ent-res-net').innerText = Math.round(net).toLocaleString() + ' €';
-            document.getElementById('ent-res-rate').innerText = '-' + (rate * 100).toFixed(1) + '%';
-            document.getElementById('ent-res-cotis').innerText = Math.round(cotis).toLocaleString() + ' €';
+            // Barème 2025 progressif
+            const tranches = [
+                { limit: 11497, rate: 0.00 },
+                { limit: 29315, rate: 0.11 },
+                { limit: 83823, rate: 0.30 },
+                { limit: 180294, rate: 0.41 },
+                { limit: Infinity, rate: 0.45 }
+            ];
+
+            for (const tranche of tranches) {
+                const range = tranche.limit - prevLimit;
+                const taxableInTranche = Math.min(currentIncome, range);
+                if (taxableInTranche > 0) {
+                    tax += taxableInTranche * tranche.rate;
+                    currentIncome -= taxableInTranche;
+                }
+                if (currentIncome <= 0) break;
+                prevLimit = tranche.limit;
+            }
+            return tax;
+        }
+
+        function handleEntChange() {
+            const caInput = parseFloat(document.getElementById('ent-ca').value) || 0;
+            const regime = document.getElementById('ent-regime').value;
+            const rateURSSAF = ENTREPRENEUR_RATES[regime];
+            
+            const caAnnuel = entPeriod === 'annuel' ? caInput : caInput * 12;
+
+            // 1) netURSSAF = CA * (1 - tauxURSSAF)
+            const cotisURSSAF_Annuel = caAnnuel * rateURSSAF;
+            const netURSSAF_Annuel = caAnnuel - cotisURSSAF_Annuel;
+
+            // 2) revenuImposable = CA * (1 - abattementMicro)
+            let abattementRate = 0.34; // BNC
+            if (regime === 'bic-vente') abattementRate = 0.71;
+            if (regime === 'bic-services') abattementRate = 0.50;
+            const revenuImposableAnnuel = caAnnuel * (1 - abattementRate);
+            
+            // 3) Impôt annuel (Barème progressif tranche par tranche)
+            const impotAnnuel = calculateIncomeTax(revenuImposableAnnuel);
+            
+            // 4) netApresImpot = netURSSAF - impot
+            const netFinalAnnuel = netURSSAF_Annuel - impotAnnuel;
+
+            const isAnnuel = entPeriod === 'annuel';
+            const displayDivisor = isAnnuel ? 1 : 12;
+
+            document.getElementById('ent-res-net').innerText = Math.round(netURSSAF_Annuel / displayDivisor).toLocaleString() + ' €';
+            document.getElementById('ent-res-rate').innerText = '-' + (rateURSSAF * 100).toFixed(1) + '%';
+            document.getElementById('ent-res-cotis-euro').innerText = Math.round(cotisURSSAF_Annuel / displayDivisor).toLocaleString() + ' €';
+            document.getElementById('ent-res-imposable').innerText = Math.round(revenuImposableAnnuel / displayDivisor).toLocaleString() + ' €';
+            document.getElementById('ent-res-impot-detail').innerText = Math.round(impotAnnuel / displayDivisor).toLocaleString() + ' €';
+            document.getElementById('ent-res-net-apres-impot').innerText = Math.round(netFinalAnnuel / displayDivisor).toLocaleString() + ' €';
+            document.getElementById('ent-res-period-label').innerText = `Revenu net après URSSAF (${isAnnuel ? 'an' : 'mois'})`;
         }
 
         function copyEntResult() {
-            navigator.clipboard.writeText("Revenu net entrepreneur : " + document.getElementById('ent-res-net').innerText);
+            navigator.clipboard.writeText("Mon revenu net final : " + document.getElementById('ent-res-net-apres-impot').innerText);
             alert("Copié !");
         }
 
-        window.onload = () => handleSalaryBrutChange();
+        window.onload = () => {
+            handleSalaryBrutChange();
+            handleEntChange();
+        };
     </script>
 </body>
 </html>
