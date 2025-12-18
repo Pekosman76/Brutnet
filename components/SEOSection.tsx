@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 
 interface SEOSectionProps {
@@ -80,7 +81,28 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
           </ul>
         </div>
 
-        <h3 className="text-2xl font-bold text-slate-800 mt-8 mb-4">Pourquoi utiliser un calculateur brut en net gratuit ?</h3>
+        {/* NOUVELLES SECTIONS SALARIÉ */}
+        <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Pourquoi s’agit-il d’une estimation ?</h3>
+        <p className="text-slate-600 leading-relaxed mb-6">
+          Le simulateur de <strong>CalculRevenuNet.fr</strong> utilise les taux de cotisations moyens nationaux. Cependant, votre bulletin de paie réel peut varier selon votre convention collective, les accords d'entreprise ou les contrats de prévoyance spécifiques à votre employeur. Ces paramètres peuvent faire fluctuer le net de quelques dizaines d'euros.
+        </p>
+
+        <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Cas particuliers : pourquoi votre paie peut varier</h3>
+        <p className="text-slate-600 leading-relaxed mb-6">
+          Plusieurs facteurs impactent le calcul final : la présence d'un 13ème mois, le versement de primes exceptionnelles, le remboursement des frais de transport (50% minimum obligatoire) ou encore la part salariale de la mutuelle santé. Tous ces éléments s'ajoutent ou se déduisent du salaire net "théorique" présenté ici.
+        </p>
+
+        <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Les charges salariales expliquées simplement</h3>
+        <p className="text-slate-600 leading-relaxed mb-6">
+          Les charges salariales représentent environ 22% du brut pour un non-cadre et 25% pour un cadre. Elles financent votre protection future : votre future retraite (pension), votre couverture santé actuelle, et votre assurance en cas de perte d'emploi. C'est ce qui différencie le "super-brut" (coût total employeur) du salaire net que vous dépensez chaque jour.
+        </p>
+
+        <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Différences Cadre, Non-Cadre et Fonction Publique</h3>
+        <p className="text-slate-600 leading-relaxed mb-6">
+          Le statut <strong>Cadre</strong> implique des cotisations supplémentaires pour la retraite complémentaire et l'APEC. Les salariés du <strong>secteur public</strong>, eux, ont des taux de cotisations souvent inférieurs (environ 15%) car ils ne cotisent pas à l'assurance chômage de la même manière. Notre outil ajuste automatiquement ces pourcentages selon votre sélection.
+        </p>
+
+        <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Pourquoi utiliser un calculateur brut en net gratuit ?</h3>
         <p className="text-slate-600 leading-relaxed mb-6">
           Notre simulateur effectue automatiquement ces calculs complexes en tenant compte des <strong>barèmes 2025</strong>. Que vous soyez cadre ou non-cadre, l'outil ajuste les taux pour vous fournir une estimation fiable en quelques secondes. C'est un allié précieux pour vos entretiens annuels ou vos recherches d'emploi.
         </p>
@@ -93,7 +115,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
           </div>
           <div className="group">
             <h4 className="font-bold text-slate-800 text-lg mb-2">Le simulateur inclut-il l'impôt sur le revenu ?</h4>
-            <p className="text-slate-600">Oui, en sélectionnant "Net après impôt", vous pouvez ajuster votre taux personnalisé pour voir l'impact réel du prélèvement à la source sur votre paie.</p>
+            <p className="text-slate-600">Oui, en ajustant le taux de prélèvement à la source, vous pouvez voir l'impact immédiat sur votre paie mensuelle disponible.</p>
           </div>
         </div>
       </article>
@@ -114,6 +136,22 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
         <li><strong>L'impôt sur le revenu :</strong> via le versement libératoire ou l'imposition classique.</li>
       </ul>
 
+      {/* NOUVELLES SECTIONS ENTREPRENEUR */}
+      <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">BNC vs BIC : Comprendre les différences de taxation</h3>
+      <p className="text-slate-600 leading-relaxed mb-6">
+        En micro-entreprise, votre catégorie dépend de votre métier. Les <strong>BNC</strong> (Bénéfices Non Commerciaux) concernent les professions libérales et prestations intellectuelles (développeur, consultant). Les <strong>BIC</strong> (Bénéfices Industriels et Commerciaux) concernent la vente de marchandises ou les services artisanaux. Les abattements fiscaux diffèrent : 34% pour le BNC contre 50% ou 71% pour le BIC, impactant directement votre impôt final.
+      </p>
+
+      <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Le versement libératoire de l'impôt</h3>
+      <p className="text-slate-600 leading-relaxed mb-6">
+        C'est une option souvent avantageuse pour les auto-entrepreneurs dont le revenu fiscal de référence est modéré. Elle permet de payer son impôt sur le revenu en même temps que ses cotisations sociales, avec un taux fixe réduit (1% à 2.2% selon l'activité), évitant ainsi une régularisation massive l'année suivante.
+      </p>
+
+      <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">L'importance de l'ACRE pour les nouveaux indépendants</h3>
+      <p className="text-slate-600 leading-relaxed mb-6">
+        Si vous lancez votre activité, vous pouvez bénéficier de l'ACRE (Aide à la Création ou à la Reprise d'une Entreprise). Cette aide permet une réduction de 50% de vos cotisations sociales durant les 4 premiers trimestres d'activité. Pensez à ajuster le taux personnalisé dans notre simulateur pour refléter cet avantage temporaire mais précieux.
+      </p>
+
       <p className="text-slate-600 leading-relaxed mb-6">
         Notre calculateur sur <strong>CalculRevenuNet.fr</strong> applique les taux spécifiques (BNC, BIC) à jour des dernières réformes de 2025 pour vous donner une vision claire de votre rémunération réelle.
       </p>
@@ -126,8 +164,8 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
       <h2 className="text-2xl font-bold mb-6 text-slate-900 border-b border-slate-100 pb-4 pt-8">FAQ Entrepreneur</h2>
       <div className="space-y-6">
         <div className="group">
-          <h4 className="font-bold text-slate-800 text-lg mb-2">BNC ou BIC : quelles charges ?</h4>
-          <p className="text-slate-600">Les professions libérales relèvent généralement du BNC (Bénéfices Non Commerciaux). Les activités artisanales ou commerciales relèvent du BIC. Les taux de cotisations diffèrent pour refléter la nature de l'activité.</p>
+          <h4 className="font-bold text-slate-800 text-lg mb-2">Comment optimiser mon revenu net ?</h4>
+          <p className="text-slate-600">Suivre ses dépenses professionnelles, choisir le bon régime fiscal et surveiller les seuils de franchise de TVA sont les clés pour maximiser votre reste à vivre réel.</p>
         </div>
       </div>
     </article>
