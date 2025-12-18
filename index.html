@@ -6,30 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2025</title>
     
-    <!-- SEO de base -->
-    <meta name="description" content="Simulateur gratuit de conversion salaire brut en net sur CalculRevenuNet.fr. Calculez vos revenus réels pour salariés et auto-entrepreneurs avec les barèmes à jour 2025.">
+    <!-- SEO & Meta -->
+    <meta name="description" content="Simulateur gratuit de conversion salaire brut en net sur CalculRevenuNet.fr. Calculez vos revenus réels pour salariés et auto-entrepreneurs avec les barèmes 2025.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calculrevenunet.fr/" />
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M30 70h40M30 50h40M30 30h40%22 stroke=%22white%22 stroke-width=%228%22 stroke-linecap=%22round%22/></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M30 70h40M30 50h40M30 30h40%22 stroke=%22white%22 stroke-width=%228%22 stroke-linecap=%22round%22/></svg>">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://calculrevenunet.fr/">
     <meta property="og:title" content="CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2025">
     <meta property="og:description" content="Convertissez votre salaire brut en net facilement. Simulateur complet pour cadres, non-cadres et auto-entrepreneurs.">
-    <meta property="og:image" content="https://calculrevenunet.fr/og-image.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://calculrevenunet.fr/">
-    <meta property="twitter:title" content="CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2025">
-    <meta property="twitter:description" content="Estimez votre salaire net après impôts et cotisations sociales avec précision.">
-    <meta property="twitter:image" content="https://calculrevenunet.fr/og-image.jpg">
-
-    <!-- Performance -->
+    <!-- Performance & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,16 +28,6 @@
     
     <style>
         body { font-family: 'Inter', sans-serif; }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            background: #2563eb;
-            cursor: pointer;
-            box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-        }
-        /* Contenu SEO visible par les bots mais discret pour les humains avant le chargement React */
         .sr-only-fallback {
             position: absolute;
             width: 1px;
@@ -66,85 +47,48 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "CalculRevenuNet.fr",
-      "url": "https://calculrevenunet.fr/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://calculrevenunet.fr/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://calculrevenunet.fr/"
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Comment calculer son salaire brut en net ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le calcul s'effectue en déduisant les cotisations sociales (retraite, santé, chômage) et le prélèvement à la source du salaire brut annuel ou mensuel."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Quelle est la différence entre net à payer et net social ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le montant net social est la base de calcul pour les prestations sociales, tandis que le net à payer est la somme effectivement versée sur votre compte après impôts."
-        }
-      }]
-    }
-    </script>
-
-    <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-      }
-    }
-    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.0"
+  }
+}
+</script>
 </head>
 <body class="bg-slate-50 text-slate-900">
     <noscript>
-        <div style="padding: 40px; text-align: center; background: #fff; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <h1 class="text-2xl font-bold mb-4">Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
-            <p class="mb-6">Désolé, cette application nécessite JavaScript pour fonctionner. Veuillez l'activer dans les paramètres de votre navigateur.</p>
-            <p class="text-slate-500">Notre simulateur vous permet de calculer avec précision votre salaire net après cotisations et impôts (BNC, BIC, Cadre, Non-cadre).</p>
+        <div style="padding: 40px; text-align: center;">
+            <h1>Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
+            <p>Veuillez activer JavaScript pour utiliser ce simulateur.</p>
         </div>
     </noscript>
 
-    <!-- Le conteneur root doit être vide au départ pour React, ou contenir du fallback SEO -->
     <div id="root">
+        <!-- Spinner visible UNIQUEMENT pendant le chargement des scripts. 
+             Il sera supprimé par React lors du montage de l'application. -->
+        <div class="flex flex-col items-center justify-center min-h-screen bg-white">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+          <p class="text-slate-400 font-medium animate-pulse">Chargement du simulateur...</p>
+        </div>
+
+        <!-- Contenu SEO statique pour les robots -->
         <header class="sr-only-fallback">
-            <h1>Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
+            <h1>Calcul salaire brut en net et revenu net auto-entrepreneur 2025</h1>
         </header>
         <main class="sr-only-fallback">
-            <section id="salarie">
-                <h2>Simulateur Brut en Net Salarié 2025</h2>
-                <p>Calculer son salaire brut en net est essentiel pour négocier son contrat. Ce simulateur brut net prend en compte le prélèvement à la source et les charges sociales.</p>
-            </section>
-            <section id="entrepreneur">
-                <h2>Simulateur Revenu Auto-Entrepreneur BNC BIC</h2>
-                <p>Estimez votre revenu net réel après cotisations URSSAF. Idéal pour les micro-entrepreneurs en prestation de service ou vente de marchandises.</p>
-            </section>
-            <nav>
-                <ul>
-                    <li><a href="#salarie">Calcul brut net</a></li>
-                    <li><a href="#entrepreneur">Revenu net entrepreneur</a></li>
-                    <li><a href="#faq">FAQ Salaires</a></li>
-                </ul>
-            </nav>
+            <p>Convertissez votre salaire brut en net pour salarié cadre et non-cadre. Estimez vos revenus auto-entrepreneur BNC et BIC.</p>
         </main>
-        
-        <!-- Loading state visuel pendant que React charge -->
-        <div class="flex items-center justify-center min-h-screen">
-          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        </div>
     </div>
 
-    <!-- Script principal : C'est ce qui réveille l'application React -->
+    <!-- Le chemin ./index.tsx est correct pour le développement avec Vite. 
+         Lors du build (npm run build), Vite le transformera en un fichier JS optimisé. -->
     <script type="module" src="./index.tsx"></script>
 </body>
 </html>
