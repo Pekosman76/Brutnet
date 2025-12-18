@@ -1,13 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit</title>
-    <meta name="description" content="Simulateur gratuit de conversion salaire brut en net sur CalculRevenuNet.fr. Calculez vos revenus réels pour salariés et auto-entrepreneurs avec les barèmes à jour.">
+    <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2025</title>
+    
+    <!-- SEO de base -->
+    <meta name="description" content="Simulateur gratuit de conversion salaire brut en net sur CalculRevenuNet.fr. Calculez vos revenus réels pour salariés et auto-entrepreneurs avec les barèmes à jour 2025.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calculrevenunet.fr/" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M30 70h40M30 50h40M30 30h40%22 stroke=%22white%22 stroke-width=%228%22 stroke-linecap=%22round%22/></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M30 70h40M30 50h40M30 30h40%22 stroke=%22white%22 stroke-width=%228%22 stroke-linecap=%22round%22/></svg>">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculrevenunet.fr/">
+    <meta property="og:title" content="CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2025">
+    <meta property="og:description" content="Convertissez votre salaire brut en net facilement. Simulateur complet pour cadres, non-cadres et auto-entrepreneurs.">
+    <meta property="og:image" content="https://calculrevenunet.fr/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://calculrevenunet.fr/">
+    <meta property="twitter:title" content="CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2025">
+    <meta property="twitter:description" content="Estimez votre salaire net après impôts et cotisations sociales avec précision.">
+    <meta property="twitter:image" content="https://calculrevenunet.fr/og-image.jpg">
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
         input[type=range]::-webkit-slider-thumb {
@@ -19,18 +46,97 @@
             cursor: pointer;
             box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
         }
+        /* Cacher visuellement le contenu fallback mais le laisser lisible pour les bots */
+        .sr-only-fallback {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-  }
-}
-</script>
+
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CalculRevenuNet.fr",
+      "url": "https://calculrevenunet.fr/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://calculrevenunet.fr/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Comment calculer son salaire brut en net ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le calcul s'effectue en déduisant les cotisations sociales (retraite, santé, chômage) et le prélèvement à la source du salaire brut annuel ou mensuel."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Quelle est la différence entre net à payer et net social ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le montant net social est la base de calcul pour les prestations sociales, tandis que le net à payer est la somme effectivement versée sur votre compte après impôts."
+        }
+      }]
+    }
+    </script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-900">
-    <div id="root"></div>
+    <noscript>
+        <div style="padding: 20px; text-align: center; background: #fff;">
+            <h1>Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
+            <p>Désolé, cette application nécessite JavaScript pour fonctionner. Veuillez l'activer dans les paramètres de votre navigateur.</p>
+            <p>Notre simulateur vous permet de calculer avec précision votre salaire net après cotisations et impôts (BNC, BIC, Cadre, Non-cadre).</p>
+        </div>
+    </noscript>
+
+    <!-- Contenu fallback pour l'indexation initiale par Google -->
+    <div id="root">
+        <header class="sr-only-fallback">
+            <h1>Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
+        </header>
+        <main class="sr-only-fallback">
+            <section id="salarie">
+                <h2>Simulateur Brut en Net Salarié</h2>
+                <p>Calculez votre salaire net mensuel ou annuel à partir du montant brut. Prise en compte du statut cadre, non-cadre, fonction publique et portage salarial.</p>
+            </section>
+            <section id="entrepreneur">
+                <h2>Simulateur Revenu Auto-Entrepreneur</h2>
+                <p>Estimez votre revenu net réel après cotisations URSSAF pour les activités BNC (libéral), BIC services et BIC vente.</p>
+            </section>
+            <nav>
+                <ul>
+                    <li><a href="#salarie">Calcul salaire brut net</a></li>
+                    <li><a href="#entrepreneur">Revenu net auto-entrepreneur</a></li>
+                    <li><a href="#faq">FAQ Impôts et Charges</a></li>
+                </ul>
+            </nav>
+        </main>
+    </div>
 </body>
 </html>
