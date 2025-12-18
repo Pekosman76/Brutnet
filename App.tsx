@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import SalaryCalculator from './components/SalaryCalculator';
 import EntrepreneurCalculator from './components/EntrepreneurCalculator';
@@ -13,12 +12,22 @@ const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<ViewType>('calculator');
 
   useEffect(() => {
-    // Mise à jour dynamique du titre selon l'onglet actif et la vue
-    const baseTitle = activeTab === 'salarie' 
-      ? "Conversion salaire brut net – Calcul salarié gratuit" 
-      : "Calcul revenu auto-entrepreneur net – BNC & BIC";
+    const isSalarie = activeTab === 'salarie';
+    const siteName = "CalculRevenuNet.fr";
+    const title = isSalarie 
+      ? `Salaire Brut en Net - ${siteName}` 
+      : `Revenu Auto-Entrepreneur - ${siteName}`;
     
-    document.title = currentView === 'info' ? `Aide & Information - ${baseTitle}` : baseTitle;
+    const description = isSalarie
+      ? `Convertissez votre salaire brut en net facilement sur ${siteName}. Simulateur pour cadres, non-cadres et fonction publique.`
+      : `Estimez votre revenu net d'auto-entrepreneur sur ${siteName}. Simulation BNC et BIC gratuite et rapide.`;
+
+    document.title = currentView === 'info' ? `Aide & Guide - ${title}` : title;
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', description);
+    }
   }, [activeTab, currentView]);
 
   const handleTabSwitch = (tab: TabType) => {
@@ -32,7 +41,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen pb-20 bg-slate-50">
-      {/* Header */}
+      {/* GitHub Pages Custom Domain Note: Uses CNAME file at root */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
@@ -45,7 +54,7 @@ const App: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
-              <span className="text-2xl font-black text-slate-900 tracking-tight">Brut<span className="text-blue-600">Net</span>.pro</span>
+              <span className="text-2xl font-black text-slate-900 tracking-tight">Calcul<span className="text-blue-600">RevenuNet</span>.fr</span>
             </div>
             <nav className="flex gap-8 text-sm font-semibold">
               <button 
@@ -70,18 +79,17 @@ const App: React.FC = () => {
 
         <div className="text-center mb-10">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
-            {currentView === 'calculator' 
-              ? (activeTab === 'salarie' ? 'Calculateur Salaire Brut en Net' : 'Calculateur Revenu Auto-Entrepreneur')
-              : (activeTab === 'salarie' ? 'Guide complet : Brut vers Net' : 'Guide Entrepreneur : CA vers Net')}
+            {activeTab === 'salarie' 
+              ? 'Calculateur Salaire Brut en Net' 
+              : 'Calculateur Revenu Auto-Entrepreneur Net'}
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             {currentView === 'calculator' 
-              ? "L'outil de référence gratuit pour estimer vos revenus réels en France. Mise à jour 2024/2025."
-              : "Retrouvez toutes les informations et conseils pour comprendre vos charges et optimiser vos revenus."}
+              ? `L'outil gratuit de CalculRevenuNet.fr pour estimer vos revenus réels après charges sociales.`
+              : "Retrouvez toutes les informations sur les charges sociales et l'imposition en France."}
           </p>
         </div>
 
-        {/* Tab Switcher - Conserve le même style que la page d'accueil */}
         <div className="flex p-1 bg-slate-200/50 rounded-2xl w-full max-w-md mx-auto mb-12 shadow-inner">
           <button
             onClick={() => handleTabSwitch('salarie')}
@@ -111,7 +119,6 @@ const App: React.FC = () => {
           </button>
         </div>
 
-        {/* Affichage conditionnel selon la vue active */}
         <div className="transition-all duration-300">
           {currentView === 'calculator' ? (
             <>
@@ -140,14 +147,12 @@ const App: React.FC = () => {
 
       <footer className="mt-20 border-t border-slate-200 bg-white py-12">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-slate-500 text-sm">
-            © 2024 BrutNet.pro - Outil de simulation fiscale gratuit. 
-            Les calculs sont fournis à titre indicatif et ne remplacent pas une fiche de paie officielle.
+          <p className="text-slate-500 text-sm font-medium">
+            © 2024 CalculRevenuNet.fr - Simulateur de revenus gratuit en France.
           </p>
           <div className="mt-4 flex justify-center gap-6 text-slate-400 text-xs">
             <a href="#" className="hover:text-slate-600">Mentions Légales</a>
-            <a href="#" className="hover:text-slate-600">Cookies</a>
-            <a href="#" className="hover:text-slate-600">Vie Privée</a>
+            <a href="#" className="hover:text-slate-600">Confidentialité</a>
           </div>
         </div>
       </footer>
