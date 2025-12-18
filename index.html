@@ -46,7 +46,7 @@
             cursor: pointer;
             box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
         }
-        /* Cacher visuellement le contenu fallback mais le laisser lisible pour les bots */
+        /* Contenu SEO visible par les bots mais discret pour les humains avant le chargement React */
         .sr-only-fallback {
             position: absolute;
             width: 1px;
@@ -108,35 +108,43 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <noscript>
-        <div style="padding: 20px; text-align: center; background: #fff;">
-            <h1>Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
-            <p>Désolé, cette application nécessite JavaScript pour fonctionner. Veuillez l'activer dans les paramètres de votre navigateur.</p>
-            <p>Notre simulateur vous permet de calculer avec précision votre salaire net après cotisations et impôts (BNC, BIC, Cadre, Non-cadre).</p>
+        <div style="padding: 40px; text-align: center; background: #fff; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 class="text-2xl font-bold mb-4">Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
+            <p class="mb-6">Désolé, cette application nécessite JavaScript pour fonctionner. Veuillez l'activer dans les paramètres de votre navigateur.</p>
+            <p class="text-slate-500">Notre simulateur vous permet de calculer avec précision votre salaire net après cotisations et impôts (BNC, BIC, Cadre, Non-cadre).</p>
         </div>
     </noscript>
 
-    <!-- Contenu fallback pour l'indexation initiale par Google -->
+    <!-- Le conteneur root doit être vide au départ pour React, ou contenir du fallback SEO -->
     <div id="root">
         <header class="sr-only-fallback">
             <h1>Calcul salaire brut en net et revenu net auto-entrepreneur</h1>
         </header>
         <main class="sr-only-fallback">
             <section id="salarie">
-                <h2>Simulateur Brut en Net Salarié</h2>
-                <p>Calculez votre salaire net mensuel ou annuel à partir du montant brut. Prise en compte du statut cadre, non-cadre, fonction publique et portage salarial.</p>
+                <h2>Simulateur Brut en Net Salarié 2025</h2>
+                <p>Calculer son salaire brut en net est essentiel pour négocier son contrat. Ce simulateur brut net prend en compte le prélèvement à la source et les charges sociales.</p>
             </section>
             <section id="entrepreneur">
-                <h2>Simulateur Revenu Auto-Entrepreneur</h2>
-                <p>Estimez votre revenu net réel après cotisations URSSAF pour les activités BNC (libéral), BIC services et BIC vente.</p>
+                <h2>Simulateur Revenu Auto-Entrepreneur BNC BIC</h2>
+                <p>Estimez votre revenu net réel après cotisations URSSAF. Idéal pour les micro-entrepreneurs en prestation de service ou vente de marchandises.</p>
             </section>
             <nav>
                 <ul>
-                    <li><a href="#salarie">Calcul salaire brut net</a></li>
-                    <li><a href="#entrepreneur">Revenu net auto-entrepreneur</a></li>
-                    <li><a href="#faq">FAQ Impôts et Charges</a></li>
+                    <li><a href="#salarie">Calcul brut net</a></li>
+                    <li><a href="#entrepreneur">Revenu net entrepreneur</a></li>
+                    <li><a href="#faq">FAQ Salaires</a></li>
                 </ul>
             </nav>
         </main>
+        
+        <!-- Loading state visuel pendant que React charge -->
+        <div class="flex items-center justify-center min-h-screen">
+          <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        </div>
     </div>
+
+    <!-- Script principal : C'est ce qui réveille l'application React -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
