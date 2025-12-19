@@ -39,24 +39,31 @@
         }
         .hidden { display: none !important; }
         
-        /* Information Styles & Readability */
-        .info-container { max-width: 760px; margin-left: auto; margin-right: auto; }
-        .info-card { @apply bg-white p-10 md:p-14 rounded-[2.5rem] border border-slate-100 shadow-[0_2px_15px_-5px_rgba(0,0,0,0.02)] mb-16 transition-all; }
-        .info-card h3 { @apply text-2xl font-black text-slate-900 mb-10 flex items-center gap-4; }
-        .info-card p { @apply text-slate-600 leading-[1.7] text-[16px] mb-6 text-left; }
-        .info-card p:last-child { @apply mb-0; }
+        /* Information Container Largeur Optimisée */
+        .info-container{
+          margin-left:auto;
+          margin-right:auto;
+          padding-left:1rem;
+          padding-right:1rem;
+          max-width: 100%;
+        }
+        @media (min-width: 640px){
+          .info-container{ padding-left:1.5rem; padding-right:1.5rem; }
+        }
+        @media (min-width: 1024px){
+          .info-container{ max-width: 80rem; } /* 1280px */
+        }
+        @media (min-width: 1280px){
+          .info-container{ max-width: 88rem; } /* 1408px */
+        }
         
-        /* Sommaire Statique Grille */
+        /* Sommaire Statique */
         .toc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; width: 100%; }
         @media (max-width: 768px) { .toc-grid { grid-template-columns: 1fr; } }
-        .toc-item { @apply bg-slate-50 p-5 rounded-2xl text-[13px] font-bold text-slate-500 border border-slate-100 flex items-center gap-4 h-full; }
+        .toc-item { border-width: 1px; border-color: #f1f5f9; background-color: #f8fafc; padding: 1.5rem; border-radius: 1rem; font-size: 14px; font-weight: 700; color: #64748b; display: flex; align-items: center; gap: 1.25rem; }
         
-        #back-to-top { @apply fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-xl opacity-0 translate-y-4 pointer-events-none transition-all duration-300 z-50; }
-        #back-to-top.show { @apply opacity-100 translate-y-0 pointer-events-auto; }
-
-        /* Accent Colors */
-        .accent-salarie { @apply text-blue-600; }
-        .accent-entrepreneur { @apply text-indigo-600; }
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #2563eb; color: white; padding: 1rem; border-radius: 9999px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); opacity: 0; transform: translateY(1rem); pointer-events: none; transition: all 0.3s; z-index: 50; }
+        #back-to-top.show { opacity: 100; transform: translateY(0); pointer-events: auto; }
     </style>
 <script type="importmap">
 {
@@ -236,7 +243,7 @@
                 </section>
             </div>
 
-            <!-- EXPLICATIONS ACCUEIL -->
+            <!-- PEDAGOGIE ACCUEIL (ZONE INCHANGÉE) -->
             <div id="pedagogie-accueil" class="mt-20 border-t border-slate-200 pt-16">
                 <div class="text-center mb-12">
                     <h3 class="text-2xl font-black text-slate-800">Comment fonctionne le calcul ?</h3>
@@ -262,127 +269,161 @@
             </div>
         </div>
 
-        <!-- SECTION INFORMATIONS RICHE UX -->
+        <!-- SECTION INFORMATIONS RICHE - TRANSFORMEE EN CARTES UI STYLE 01/02/03 -->
         <div id="info-section-container" class="mt-20 hidden">
             
             <div class="info-container">
                 <!-- Sommaire Statique Grille -->
-                <div class="bg-white p-8 rounded-[3rem] border border-slate-100 shadow-sm mb-20">
-                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-8 px-4">Contenu détaillé des sections</h4>
+                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm mb-16">
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-8 px-4 text-center md:text-left">Contenu détaillé des sections</h4>
                     <div id="info-toc" class="toc-grid"></div>
                 </div>
 
-                <!-- INFO SALARIÉ -->
-                <div id="info-salarie" class="space-y-4">
-                    <article class="info-card">
-                        <h3 class="accent-salarie">💼 1. Le Salaire Brut : Définition et Enjeux</h3>
-                        <p>Le salaire brut constitue le montant contractuel initial avant toute déduction fiscale ou sociale obligatoire.</p>
-                        <p>En France, il sert de base de référence pour l'ensemble des négociations lors d'un recrutement ou d'un entretien annuel d'évaluation.</p>
-                        <p>C'est sur cette somme que sont indexées vos cotisations pour la retraite, vos droits au chômage et vos indemnités en cas d'arrêt maladie.</p>
-                        <p>Comprendre son brut permet de situer précisément sa valeur sur le marché de l'emploi et de comparer efficacement des offres d'emploi provenant de secteurs différents, car les grilles de salaires sont systématiquement exprimées en brut annuel.</p>
+                <!-- INFO SALARIÉ RÉ-ORGANISÉE EN 6 CARTES UI -->
+                <div id="info-salarie" class="space-y-12">
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">01</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">💼 1. Le Salaire Brut : Définition et Enjeux</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le salaire brut constitue le montant contractuel initial avant toute déduction fiscale ou sociale obligatoire.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">En France, il sert de base de référence pour l'ensemble des négociations lors d'un recrutement ou d'un entretien annuel d'évaluation.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">C'est sur cette somme que sont indexées vos cotisations pour la retraite, vos droits au chômage et vos indemnités en cas d'arrêt maladie.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Comprendre son brut permet de situer précisément sa valeur sur le marché de l'emploi et de comparer efficacement des offres d'emploi provenant de secteurs différents, car les grilles de salaires sont systématiquement exprimées en brut annuel.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-salarie">💰 2. Salaire Net : Votre Pouvoir d'Achat Réel</h3>
-                        <p>Le salaire net représente la somme effectivement créditée sur votre compte bancaire à chaque fin de mois.</p>
-                        <p>On distingue le net à payer (avant impôt sur le revenu) et le net après impôt (restant disponible après prélèvement à la source).</p>
-                        <p>Le passage du brut au net implique la déduction d'environ 22% à 25% de charges sociales salariales.</p>
-                        <p>Ce chiffre est le plus crucial pour votre gestion budgétaire quotidienne, car il détermine votre capacité de remboursement de crédit, votre loyer maximal acceptable et votre épargne disponible.</p>
-                        <p>Il reflète la réalité de votre niveau de vie après l'effort de solidarité nationale.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">02</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">💰 2. Salaire Net : Votre Pouvoir d'Achat Réel</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le salaire net représente la somme effectivement créditée sur votre compte bancaire à chaque fin de mois.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">On distingue le net à payer (avant impôt sur le revenu) et le net après impôt (restant disponible après prélèvement à la source).</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le passage du brut au net implique la déduction d'environ 22% à 25% de charges sociales salariales.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce chiffre est le plus crucial pour votre gestion budgétaire quotidienne, car il détermine votre capacité de remboursement de crédit, votre loyer maximal acceptable et votre épargne disponible.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Il reflète la réalité de votre niveau de vie après l'effort de solidarité nationale.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-salarie">🛡️ 3. Cotisations Sociales : Votre Bouclier Sécuritaire</h3>
-                        <p>Les cotisations sociales ne sont pas de simples prélèvements, mais des contributions ouvrant des droits directs.</p>
-                        <p>Elles financent le système de sécurité sociale français : l'assurance maladie pour le remboursement de vos soins, l'assurance vieillesse pour votre future pension de retraite, et l'assurance chômage.</p>
-                        <p>Cet ensemble garantit une protection collective unique au monde.</p>
-                        <p>Une partie est à la charge de l'employeur (cotisations patronales) et l'autre est déduite de votre salaire (cotisations salariales).</p>
-                        <p>Ce mécanisme de solidarité permet à chaque travailleur de bénéficier d'une couverture complète sans avoir à épargner massivement pour sa santé.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">03</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🛡️ 3. Cotisations Sociales : Votre Bouclier Sécuritaire</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Les cotisations sociales ne sont pas de simples prélèvements, mais des contributions ouvrant des droits directs.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Elles financent le système de sécurité sociale français : l'assurance maladie pour le remboursement de vos soins, l'assurance vieillesse pour votre future pension de retraite, et l'assurance chômage.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Cet ensemble garantit une protection collective unique au monde.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Une partie est à la charge de l'employeur (cotisations patronales) et l'autre est déduite de votre salaire (cotisations salariales).</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce mécanisme de solidarité permet à chaque travailleur de bénéficier d'une couverture complète sans avoir à épargner massivement pour sa santé.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-salarie">📊 4. Prélèvement à la Source : L'Impôt Contemporain</h3>
-                        <p>Instauré en 2019, le prélèvement à la source permet de collecter l'impôt sur le revenu directement au moment du versement du salaire.</p>
-                        <p>Ce système élimine le décalage d'un an qui existait auparavant entre la perception des revenus et leur taxation.</p>
-                        <p>Le taux est transmis par l'administration fiscale à votre employeur.</p>
-                        <p>Vous avez le choix entre un taux personnalisé (basé sur l'ensemble de votre foyer), un taux neutre (pour garder la confidentialité vis-à-vis de votre employeur) ou un taux individualisé au sein du couple.</p>
-                        <p>Ce mode de collecte simplifie la gestion de trésorerie des ménages et ajuste l'impôt en temps réel en cas de changement de situation.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">04</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">📊 4. Prélèvement à la Source : L'Impôt Contemporain</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Instauré en 2019, le prélèvement à la source permet de collecter l'impôt sur le revenu directement au moment du versement du salaire.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce système élimine le décalage d'un an qui existait auparavant entre la perception des revenus et leur taxation.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le taux est transmis par l'administration fiscale à votre employeur.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Vous avez le choix entre un taux personnalisé (basé sur l'ensemble de votre foyer), un taux neutre ou un taux individualisé au sein du couple.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce mode de collecte simplifie la gestion de trésorerie des ménages et ajuste l'impôt en temps réel en cas de changement de situation.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-salarie">🎖️ 5. Cadre vs Non-Cadre : Statuts et Retraite</h3>
-                        <p>Le statut cadre en France confère des droits et des obligations spécifiques.</p>
-                        <p>Généralement, un cadre supporte des cotisations sociales plus élevées (environ 25% du brut contre 22% pour un non-cadre) en raison de sa participation à des caisses de retraite complémentaire plus avantageuses.</p>
-                        <p>Le cadre bénéficie souvent de garanties de prévoyance renforcées et de services dédiés via l'APEC.</p>
-                        <p>Cependant, cette différence de prélèvement se traduit par un salaire net inférieur pour un brut identique par rapport à un profil non-cadre.</p>
-                        <p>En contrepartie, le statut cadre offre souvent une plus grande autonomie dans l'organisation du temps de travail, souvent régi par un forfait jours annuel.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">05</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🎖️ 5. Cadre vs Non-Cadre : Statuts et Retraite</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le statut cadre en France confère des droits et des obligations spécifiques.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Généralement, un cadre supporte des cotisations sociales plus élevées (environ 25% du brut contre 22% pour un non-cadre) en raison de sa participation à des caisses de retraite complémentaire plus avantageuses.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le cadre bénéficie souvent de garanties de prévoyance renforcées et de services dédiés via l'APEC.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Cependant, cette différence de prélèvement se traduit par un salaire net inférieur pour un brut identique par rapport à un profil non-cadre.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">En contrepartie, le statut cadre offre souvent une plus grande autonomie dans l'organisation du temps de travail, souvent régi par un forfait jours annuel.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-salarie">📅 6. Éléments Variables : 13ème mois et Primes</h3>
-                        <p>La rémunération annuelle peut être composée de nombreux éléments au-delà du salaire de base.</p>
-                        <p>Le 13ème mois, les primes d'objectifs, l'intéressement ou la participation peuvent représenter une part significative de vos revenus totaux.</p>
-                        <p>Il est essentiel d'intégrer ces variables dans votre calcul de brut annuel pour une vision globale.</p>
-                        <p>Les avantages en nature (véhicule de fonction, téléphone) ou les avantages sociaux (tickets restaurant, mutuelle prise en charge à 50% minimum) viennent également compléter votre package global.</p>
-                        <p>Bien que certains soient partiellement exonérés, la plupart de ces compléments sont soumis à l'impôt et aux cotisations sociales classiques.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">06</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">📅 6. Éléments Variables : 13ème mois et Primes</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">La rémunération annuelle peut être composée de nombreux éléments au-delà du salaire de base.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le 13ème mois, les primes d'objectifs, l'intéressement ou la participation peuvent représenter une part significative de vos revenus totaux.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est essentiel d'intégrer ces variables dans votre calcul de brut annuel pour une vision globale.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Les avantages en nature (véhicule de fonction, téléphone) ou les avantages sociaux (tickets restaurant) viennent également compléter votre package global.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Bien que certains soient partiellement exonérés, la plupart de ces compléments sont soumis à l'impôt et aux cotisations sociales classiques.</p>
+                        </div>
                     </article>
                 </div>
 
-                <!-- INFO ENTREPRENEUR -->
-                <div id="info-entrepreneur" class="space-y-4 hidden">
-                    <article class="info-card">
-                        <h3 class="accent-entrepreneur">📈 1. Chiffre d'Affaires : Le Flux d'Entrée Brut</h3>
-                        <p>Pour un auto-entrepreneur, le chiffre d'affaires (CA) est le montant total brut encaissé au titre de ses prestations ou de ses ventes.</p>
-                        <p>Contrairement au salariat, le CA ne constitue jamais un revenu disponible immédiat.</p>
-                        <p>C'est l'indicator de volume de votre business.</p>
-                        <p>Il est impératif de suivre rigoureusement son CA mensuel pour respecter les plafonds du régime micro-fiscal (77 700 € pour les services, 188 700 € pour le commerce).</p>
-                        <p>Une erreur commune est de considérer le CA comme un salaire, alors qu'il doit couvrir vos cotisations sociales, vos frais d'assurance, vos logiciels, vos déplacements et votre futur impôt sur le revenu.</p>
-                        <p>La rigueur comptable commence par là.</p>
+                <!-- INFO ENTREPRENEUR RÉ-ORGANISÉE EN 6 CARTES UI -->
+                <div id="info-entrepreneur" class="space-y-12 hidden">
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">01</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">📈 1. Chiffre d'Affaires : Le Flux d'Entrée Brut</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Pour un auto-entrepreneur, le chiffre d'affaires (CA) est le montant total brut encaissé au titre de ses prestations ou de ses ventes.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Contrairement au salariat, le CA ne constitue jamais un revenu disponible immédiat.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">C'est l'indicator de volume de votre business.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est impératif de suivre rigoureusement son CA mensuel pour respecter les plafonds du régime micro-fiscal (77 700 € pour les services, 188 700 € pour le commerce).</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Une erreur commune est de considérer le CA comme un salaire, alors qu'il doit couvrir vos cotisations sociales, vos frais d'assurance, vos logiciels et votre futur impôt sur le revenu.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-entrepreneur">💵 2. Revenu Net : La Rémunération de l'Indépendant</h3>
-                        <p>Le revenu net de l'auto-entrepreneur est la somme qui reste après le paiement des cotisations URSSAF.</p>
-                        <p>C'est la base qui servira à financer votre vie personnelle.</p>
-                        <p>Cependant, un entrepreneur avisé doit encore en déduire ses frais réels de fonctionnement pour obtenir son véritable bénéfice.</p>
-                        <p>Contrairement à un salarié, ce net ne comprend aucune provision pour vos congés payés, vos jours de maladie (souvent mal indemnisés) ou vos périodes d'inactivité entre deux contrats.</p>
-                        <p>Il est conseillé de se fixer une rémunération cible en tenant compte d'une réserve de sécurité de 15% pour anticiper les impondérables et les investissements futurs nécessaires au développement.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">02</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">💵 2. Revenu Net : La Rémunération de l'Indépendant</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le revenu net de l'auto-entrepreneur est la somme qui reste après le paiement des cotisations URSSAF.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">C'est la base qui servira à financer votre vie personnelle.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Cependant, un entrepreneur avisé doit encore en déduire ses frais réels de fonctionnement pour obtenir son véritable bénéfice.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Contrairement à un salarié, ce net ne comprend aucune provision pour vos congés payés, vos jours de maladie ou vos périodes d'inactivité entre deux contrats.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est conseillé de se fixer une rémunération cible en tenant compte d'une réserve de sécurité de 15% pour anticiper les impondérables.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-entrepreneur">✂️ 3. Abattement Fiscal : Le Revenu Imposable</h3>
-                        <p>L'administration fiscale applique un abattement forfaitaire sur votre chiffre d'affaires pour calculer votre impôt, sans que vous n'ayez à justifier vos frais réels.</p>
-                        <p>Cet abattement varie selon votre activité : 34% pour les activités libérales (BNC), 50% pour les prestations de services commerciales (BIC) et 71% pour l'achat-revente.</p>
-                        <p>Le montant restant après cet abattement constitue votre "revenu imposable".</p>
-                        <p>Ce système simplifié est extrêmement avantageux si vos frais réels sont minimes (consulting à domicile par exemple).</p>
-                        <p>En revanche, si vos charges de structure sont élevées, le régime réel pourrait s'avérer plus protecteur financièrement que le régime micro-entrepreneur.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">03</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">✂️ 3. Abattement Fiscal : Le Revenu Imposable</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">L'administration fiscale applique un abattement forfaitaire sur votre chiffre d'affaires pour calculer votre impôt.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Cet abattement varie selon votre activité : 34% pour les activités libérales (BNC), 50% pour les prestations BIC et 71% pour l'achat-revente.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le montant restant après cet abattement constitue votre "revenu imposable".</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce système simplifié est extrêmement avantageux si vos frais réels sont minimes (consulting à domicile par exemple).</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">En revanche, si vos charges de structure sont élevées, le régime réel pourrait s'avérer plus protecteur.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-entrepreneur">🏦 4. Cotisations URSSAF : Taux et Paiement</h3>
-                        <p>Les cotisations sociales sont calculées selon un pourcentage fixe appliqué directement sur votre chiffre d'affaires encaissé.</p>
-                        <p>Pour les services libéraux, le taux standard tourne autour de 21,1% à 23,1%.</p>
-                        <p>L'atout majeur de ce régime est l'absence de CA = absence de cotisations.</p>
-                        <p>Ces prélèvements financent votre protection sociale obligatoire : assurance maladie, retraite de base, prévoyance et droits à la formation professionnelle.</p>
-                        <p>Le paiement s'effectue mensuellement ou trimestriellement sur le portail autoentrepreneur.urssaf.fr.</p>
-                        <p>Une bonne pratique consiste à isoler systématiquement le montant des cotisations dès l'encaissement d'une facture sur un compte bancaire dédié à cet effet.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">04</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🏦 4. Cotisations URSSAF : Taux et Paiement</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Les cotisations sociales sont calculées selon un pourcentage fixe appliqué directement sur votre chiffre d'affaires encaissé.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Pour les services libéraux, le taux standard tourne autour de 21,1% à 23,1%.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">L'atout majeur de ce régime est l'absence de CA = absence de cotisations.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ces prélèvements financent votre protection sociale obligatoire : assurance maladie, retraite de base, prévoyance et droits à la formation professionnelle.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Le paiement s'effectue mensuellement ou trimestriellement sur le portail autoentrepreneur.urssaf.fr.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-entrepreneur">⚖️ 5. Impôt sur le Revenu : Barème Progressif 2025</h3>
-                        <p>Sauf si vous avez opté pour le versement libératoire (soumis à conditions de ressources), vos revenus d'indépendant sont intégrés à votre déclaration annuelle globale.</p>
-                        <p>L'impôt est alors calculé selon le barème progressif par tranches (0%, 11%, 30%, 41%, 45%).</p>
-                        <p>Notre simulateur utilise précisément ces tranches pour estimer votre impôt sur la base de votre revenu imposable (CA après abattement).</p>
-                        <p>Il est crucial de comprendre que chaque euro gagné au-delà d'un certain seuil peut basculer dans une tranche supérieure, impactant lourdement votre net final.</p>
-                        <p>Anticiper cette fiscalité est la clé pour ne pas subir de régularisations douloureuses l'année suivante, surtout lors d'une forte croissance.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">05</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">⚖️ 5. Impôt sur le Revenu : Barème Progressif 2025</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Sauf si vous avez opté pour le versement libératoire, vos revenus d'indépendant sont intégrés à votre déclaration annuelle globale.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">L'impôt est alors calculé selon le barème progressif par tranches (0%, 11%, 30%, 41%, 45%).</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Notre simulateur utilise précisément ces tranches pour estimer votre impôt sur la base de votre revenu imposable.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est crucial de comprendre que chaque euro gagné au-delà d'un certain seuil peut basculer dans une tranche supérieure, impactant lourdement votre net final.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Anticiper cette fiscalité est la clé pour ne pas subir de régularisations douloureuses.</p>
+                        </div>
                     </article>
 
-                    <article class="info-card">
-                        <h3 class="accent-entrepreneur">🚀 6. ACRE et Aides : Optimiser son Lancement</h3>
-                        <p>L'ACRE (Aide à la Création ou à la Reprise d'une Entreprise) permet aux nouveaux créateurs de bénéficier d'une exonération partielle de cotisations sociales durant les 12 premiers mois d'activité.</p>
-                        <p>Ce dispositif est un levier financier puissant qui permet de diviser par deux environ le poids des charges URSSAF au démarrage, facilitant ainsi la constitution d'un fonds de roulement.</p>
-                        <p>Elle est accessible aux demandeurs d'emploi, aux jeunes de moins de 26 ans ou aux bénéficiaires de minima sociaux.</p>
-                        <p>Par ailleurs, des dispositifs comme l'ARCE permettent de percevoir ses allocations chômage sous forme de capital pour investir dans son projet, offrant une sécurité financière totale lors de la phase de lancement du business.</p>
+                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">06</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🚀 6. ACRE et Aides : Optimiser son Lancement</h3>
+                        <div class="space-y-4">
+                            <p class="text-slate-500 text-[16px] leading-relaxed">L'ACRE permet aux nouveaux créateurs de bénéficier d'une exonération partielle de cotisations sociales durant les 12 premiers mois d'activité.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce dispositif est un levier financier puissant qui permet de diviser par deux environ le poids des charges URSSAF au démarrage.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Elle est accessible aux demandeurs d'emploi, aux jeunes de moins de 26 ans ou aux bénéficiaires de minima sociaux.</p>
+                            <p class="text-slate-500 text-[16px] leading-relaxed">Par ailleurs, des dispositifs comme l'ARCE permettent de percevoir ses allocations chômage sous forme de capital pour investir dans son projet.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -443,7 +484,7 @@
             document.getElementById('tab-salarie').className = `flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 ${tab === 'salarie' ? 'tab-active' : 'tab-inactive'}`;
             document.getElementById('tab-entrepreneur').className = `flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 ${tab === 'entrepreneur' ? 'tab-active' : 'tab-inactive'}`;
             
-            // Toggle wrappers & pedagogy
+            // Toggle wrappers
             document.getElementById('sal-calc-wrapper').classList.toggle('hidden', tab !== 'salarie');
             document.getElementById('ent-calc-wrapper').classList.toggle('hidden', tab !== 'entrepreneur');
 
@@ -466,7 +507,7 @@
             const selector = activeTab === 'salarie' ? '#info-salarie article' : '#info-entrepreneur article';
             const articles = document.querySelectorAll(selector);
             
-            articles.forEach(art => {
+            articles.forEach((art, index) => {
                 const titleParts = art.querySelector('h3').innerText.split(' ');
                 const icon = titleParts[0];
                 const cleanTitle = titleParts.slice(1).join(' ');
