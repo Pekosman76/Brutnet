@@ -80,34 +80,34 @@
 
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row justify-between items-center py-4 sm:py-0 sm:h-20">
-                <div class="flex items-center gap-2 cursor-pointer mb-4 sm:mb-0" onclick="showView('calculator')">
-                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex-shrink-0 flex items-center justify-center text-white shadow-lg shadow-blue-200">
+            <div class="flex flex-col sm:flex-row justify-between items-center py-3 sm:py-0 sm:h-20">
+                <div class="flex items-center gap-2 cursor-pointer mb-2 sm:mb-0" onclick="showView('calculator')">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex-shrink-0 flex items-center justify-center text-white shadow-lg shadow-blue-200 scale-90 sm:scale-100">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <span class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight whitespace-nowrap">Calcul<span class="text-blue-600">RevenuNet</span>.fr</span>
+                    <span class="text-lg sm:text-2xl font-black text-slate-900 tracking-tight whitespace-nowrap">Calcul<span class="text-blue-600">RevenuNet</span>.fr</span>
                 </div>
                 <nav class="flex gap-6 sm:gap-8 text-sm font-semibold w-full sm:w-auto justify-center">
-                    <button id="nav-home" onclick="showView('calculator')" class="transition-colors py-2 border-b-2 view-active">Accueil</button>
-                    <button id="nav-info" onclick="showView('info')" class="transition-colors py-2 border-b-2 view-inactive">Information</button>
+                    <button id="nav-home" onclick="showView('calculator')" class="transition-colors py-1.5 sm:py-2 border-b-2 view-active">Accueil</button>
+                    <button id="nav-info" onclick="showView('info')" class="transition-colors py-1.5 sm:py-2 border-b-2 view-inactive">Information</button>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
-        <div class="text-center mb-10">
-            <h1 id="main-h1" class="text-4xl sm:text-5xl font-black text-slate-900 mb-4 tracking-tight">Simulateur de Revenus 2025</h1>
-            <p id="main-p" class="text-lg text-slate-600 max-w-2xl mx-auto">Calculez précisément vos revenus nets après cotisations URSSAF et impôt sur le revenu.</p>
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
+        <div class="text-center mb-6 sm:mb-10">
+            <h1 id="main-h1" class="text-3xl sm:text-5xl font-black text-slate-900 mb-3 sm:mb-4 tracking-tight leading-tight">Simulateur de Revenus 2025</h1>
+            <p id="main-p" class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Calculez précisément vos revenus nets après cotisations URSSAF et impôt sur le revenu.</p>
         </div>
 
-        <div id="tab-container" class="flex p-1 bg-slate-200/50 rounded-2xl w-full max-md mx-auto mb-12 shadow-inner">
-            <button id="tab-salarie" onclick="setTab('salarie')" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 tab-active">
+        <div id="tab-container" class="flex p-1 bg-slate-200/50 rounded-2xl w-full max-w-md mx-auto mb-8 sm:mb-12 shadow-inner">
+            <button id="tab-salarie" onclick="setTab('salarie')" class="flex-1 flex items-center justify-center gap-2 py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-200 tab-active">
                 Salarié
             </button>
-            <button id="tab-entrepreneur" onclick="setTab('entrepreneur')" class="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all duration-200 tab-inactive">
+            <button id="tab-entrepreneur" onclick="setTab('entrepreneur')" class="flex-1 flex items-center justify-center gap-2 py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-200 tab-inactive">
                 Entrepreneur
             </button>
         </div>
@@ -115,17 +115,17 @@
         <div id="calculator-view">
             <!-- CALCULATORS -->
             <div id="sal-calc-wrapper">
-                <section id="salarie-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200">
-                        <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-xl font-bold text-slate-900">Salaire Brut / Net</h2>
-                            <button onclick="resetSalary()" class="text-xs font-bold text-slate-400 hover:text-blue-600 uppercase">Reset</button>
+                <section id="salarie-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
+                    <div class="bg-white p-5 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
+                        <div class="flex justify-between items-center mb-5 sm:mb-6">
+                            <h2 class="text-lg sm:text-xl font-bold text-slate-900">Salaire Brut / Net</h2>
+                            <button onclick="resetSalary()" class="text-[10px] sm:text-xs font-bold text-slate-400 hover:text-blue-600 uppercase">Reset</button>
                         </div>
-                        <div class="space-y-6">
+                        <div class="space-y-4 sm:space-y-6">
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-2">Salaire Brut</label>
+                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">Salaire Brut</label>
                                 <div class="flex w-full overflow-hidden">
-                                    <input id="sal-brut" type="number" oninput="handleSalaryBrutChange()" class="flex-1 min-w-0 border-2 border-slate-200 rounded-l-2xl px-4 py-4 focus:border-blue-500 focus:outline-none font-bold text-xl" value="35000">
+                                    <input id="sal-brut" type="number" oninput="handleSalaryBrutChange()" class="flex-1 min-w-0 border-2 border-slate-200 rounded-l-2xl px-4 py-3 sm:py-4 focus:border-blue-500 focus:outline-none font-bold text-lg sm:text-xl" value="35000">
                                     <select id="sal-period" onchange="handleSalaryChange()" class="w-auto min-w-fit whitespace-nowrap bg-slate-50 border-2 border-l-0 border-slate-200 rounded-r-2xl px-2 text-xs sm:text-sm font-bold">
                                         <option value="annuel">€ / an</option>
                                         <option value="mensuel">€ / mois</option>
@@ -133,73 +133,73 @@
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-2">Salaire Net (Avant impôt)</label>
+                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">Salaire Net (Avant impôt)</label>
                                 <div class="flex w-full overflow-hidden">
-                                    <input id="sal-net" type="number" oninput="handleSalaryNetChange()" class="flex-1 min-w-0 border-2 border-slate-200 rounded-l-2xl px-4 py-4 focus:border-blue-500 focus:outline-none font-bold text-xl bg-slate-50/30" value="27300">
+                                    <input id="sal-net" type="number" oninput="handleSalaryNetChange()" class="flex-1 min-w-0 border-2 border-slate-200 rounded-l-2xl px-4 py-3 sm:py-4 focus:border-blue-500 focus:outline-none font-bold text-lg sm:text-xl bg-slate-50/30" value="27300">
                                     <div class="w-auto min-w-fit whitespace-nowrap bg-slate-50 border-2 border-l-0 border-slate-200 rounded-r-2xl text-xs sm:text-sm font-bold flex items-center text-slate-400 px-2" id="sal-net-unit">€ / an</div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4">
                                 <div>
-                                    <label class="block text-sm font-bold text-slate-700 mb-2">Statut</label>
-                                    <select id="sal-status" onchange="handleSalaryChange()" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-700 bg-white">
+                                    <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">Statut</label>
+                                    <select id="sal-status" onchange="handleSalaryChange()" class="w-full border-2 border-slate-200 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-sm sm:text-base text-slate-700 bg-white">
                                         <option value="non-cadre">Non-Cadre</option>
                                         <option value="cadre">Cadre</option>
                                         <option value="public">Public</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-bold text-slate-700 mb-2">Paiement</label>
-                                    <select id="sal-mois" onchange="handleSalaryChange()" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-700 bg-white">
+                                    <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">Paiement</label>
+                                    <select id="sal-mois" onchange="handleSalaryChange()" class="w-full border-2 border-slate-200 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-sm sm:text-base text-slate-700 bg-white">
                                         <option value="12">12 mois</option>
                                         <option value="13">13 mois</option>
                                     </select>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between items-center mb-3">
-                                    <label class="text-sm font-bold text-slate-700">Taux Prélèvement (%)</label>
-                                    <input id="sal-impot-input" type="number" step="0.1" oninput="syncSalaryRange('sal-impot')" value="5.0" class="w-20 border-2 border-slate-200 rounded-lg px-2 py-1 text-sm text-right font-bold focus:border-blue-500 outline-none">
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs sm:text-sm font-bold text-slate-700">Taux Prélèvement (%)</label>
+                                    <input id="sal-impot-input" type="number" step="0.1" oninput="syncSalaryRange('sal-impot')" value="5.0" class="w-16 sm:w-20 border-2 border-slate-200 rounded-lg px-2 py-1 text-xs sm:text-sm text-right font-bold focus:border-blue-500 outline-none">
                                 </div>
                                 <input id="sal-impot-range" type="range" min="0" max="45" step="0.1" value="5.0" oninput="syncSalaryInput('sal-impot')" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
                             </div>
                         </div>
                     </div>
                     <div class="sticky top-24">
-                        <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
-                            <p class="text-blue-100 font-bold mb-2 uppercase tracking-widest text-xs">Net mensuel après impôt</p>
-                            <div id="sal-res-net-mensuel" class="text-6xl font-black mb-6">2 161 €</div>
-                            <div class="h-px bg-white/20 w-full mb-6"></div>
-                            <div class="grid grid-cols-2 gap-4 mb-8">
-                                <div><p class="text-[10px] text-blue-200 font-bold mb-1 uppercase">Brut mensuel</p><p id="sal-res-brut" class="text-xl font-bold">2 917 €</p></div>
-                                <div><p class="text-[10px] text-blue-200 font-bold mb-1 uppercase">Net annuel avant impôt</p><p id="sal-res-net-annuel-avant" class="text-xl font-bold">27 300 €</p></div>
+                        <div class="bg-blue-600 text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
+                            <p class="text-blue-100 font-bold mb-2 uppercase tracking-widest text-[10px] sm:text-xs">Net mensuel après impôt</p>
+                            <div id="sal-res-net-mensuel" class="text-5xl sm:text-6xl font-black mb-5 sm:mb-6">2 161 €</div>
+                            <div class="h-px bg-white/20 w-full mb-5 sm:mb-6"></div>
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                                <div><p class="text-[9px] sm:text-[10px] text-blue-200 font-bold mb-1 uppercase">Brut mensuel</p><p id="sal-res-brut" class="text-lg sm:text-xl font-bold">2 917 €</p></div>
+                                <div><p class="text-[9px] sm:text-[10px] text-blue-200 font-bold mb-1 uppercase">Net annuel avant impôt</p><p id="sal-res-net-annuel-avant" class="text-lg sm:text-xl font-bold">27 300 €</p></div>
                             </div>
-                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-6 border border-white/10">
-                                <p class="text-[10px] text-blue-100 font-bold uppercase tracking-widest mb-1">Net annuel après impôt</p>
-                                <p id="sal-res-net-annuel-apres" class="text-2xl font-black text-white">25 935 €</p>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-5 sm:mb-6 border border-white/10">
+                                <p class="text-[9px] sm:text-[10px] text-blue-100 font-bold uppercase tracking-widest mb-1">Net annuel après impôt</p>
+                                <p id="sal-res-net-annuel-apres" class="text-xl sm:text-2xl font-black text-white">25 935 €</p>
                             </div>
-                            <button onclick="copySalaryResult()" class="w-full bg-white text-blue-600 font-black py-4 rounded-2xl shadow-lg hover:bg-blue-50 active:scale-95 transition-all">Copier le résultat</button>
+                            <button onclick="copySalaryResult()" class="w-full bg-white text-blue-600 font-black py-3.5 sm:py-4 rounded-2xl shadow-lg hover:bg-blue-50 active:scale-95 transition-all text-sm sm:text-base">Copier le résultat</button>
                         </div>
                     </div>
                 </section>
             </div>
 
             <div id="ent-calc-wrapper" class="hidden">
-                <section id="entrepreneur-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200">
-                        <h2 class="text-xl font-bold mb-6 text-slate-900">Chiffre d'Affaires</h2>
-                        <div class="space-y-6">
+                <section id="entrepreneur-calculator" class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-start">
+                    <div class="bg-white p-5 sm:p-8 rounded-3xl shadow-sm border border-slate-200">
+                        <h2 class="text-lg sm:text-xl font-bold mb-5 sm:mb-6 text-slate-900">Chiffre d'Affaires</h2>
+                        <div class="space-y-4 sm:space-y-6">
                             <div class="flex p-1 bg-slate-100 rounded-xl">
-                                <button id="ent-period-mensuel" onclick="setEntPeriod('mensuel')" class="flex-1 py-2 text-sm font-bold rounded-lg transition-all text-slate-500">Mensuel</button>
-                                <button id="ent-period-annuel" onclick="setEntPeriod('annuel')" class="flex-1 py-2 text-sm font-bold rounded-lg transition-all bg-white text-indigo-600 shadow-sm">Annuel</button>
+                                <button id="ent-period-mensuel" onclick="setEntPeriod('mensuel')" class="flex-1 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all text-slate-500">Mensuel</button>
+                                <button id="ent-period-annuel" onclick="setEntPeriod('annuel')" class="flex-1 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all bg-white text-indigo-600 shadow-sm">Annuel</button>
                             </div>
                             <div>
-                                <label id="ent-ca-label" class="block text-sm font-bold text-slate-700 mb-2">Montant du CA (€/an)</label>
-                                <input id="ent-ca" type="number" oninput="handleEntChange()" class="w-full border-2 border-slate-200 rounded-2xl px-5 py-4 focus:border-indigo-500 focus:outline-none font-bold text-xl shadow-sm" value="60000">
+                                <label id="ent-ca-label" class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">Montant du CA (€/an)</label>
+                                <input id="ent-ca" type="number" oninput="handleEntChange()" class="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 sm:py-4 focus:border-indigo-500 focus:outline-none font-bold text-lg sm:text-xl shadow-sm" value="60000">
                             </div>
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 mb-2">Activité / Régime</label>
-                                <select id="ent-regime" onchange="handleEntChange()" class="w-full border-2 border-slate-200 rounded-xl px-4 py-3 font-semibold text-slate-700 bg-white">
+                                <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1.5">Activité / Régime</label>
+                                <select id="ent-regime" onchange="handleEntChange()" class="w-full border-2 border-slate-200 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 font-semibold text-sm sm:text-base text-slate-700 bg-white">
                                     <option value="bnc">Libéral (BNC - 34% abattement)</option>
                                     <option value="bic-services">Services (BIC - 50% abattement)</option>
                                     <option value="bic-vente">Vente (BIC - 71% abattement)</option>
@@ -208,221 +208,221 @@
                         </div>
                     </div>
                     <div class="sticky top-24">
-                        <div class="bg-indigo-600 text-white p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
-                            <p id="ent-res-period-label" class="text-indigo-100 font-bold mb-2 uppercase tracking-widest text-xs">Revenu net après URSSAF</p>
-                            <div id="ent-res-net" class="text-6xl font-black mb-10">3 945 €</div>
+                        <div class="bg-indigo-600 text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
+                            <p id="ent-res-period-label" class="text-indigo-100 font-bold mb-2 uppercase tracking-widest text-[10px] sm:text-xs">Revenu net après URSSAF</p>
+                            <div id="ent-res-net" class="text-5xl sm:text-6xl font-black mb-8 sm:mb-10">3 945 €</div>
                             
-                            <div class="grid grid-cols-2 gap-4 border-t border-indigo-400/30 pt-8 mb-6">
-                                <div class="text-left">
-                                    <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">URSSAF (%)</p>
-                                    <p id="ent-res-rate" class="text-xl font-black">-21.1%</p>
+                            <div class="grid grid-cols-2 gap-3 sm:gap-4 border-t border-indigo-400/30 pt-6 sm:pt-8 mb-5 sm:mb-6 text-left">
+                                <div>
+                                    <p class="text-[9px] sm:text-[10px] text-indigo-200 font-bold uppercase mb-1">URSSAF (%)</p>
+                                    <p id="ent-res-rate" class="text-lg sm:text-xl font-black">-21.1%</p>
                                 </div>
-                                <div class="text-left">
-                                    <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">URSSAF (€)</p>
-                                    <p id="ent-res-cotis-euro" class="text-xl font-black">1 055 €</p>
+                                <div>
+                                    <p class="text-[9px] sm:text-[10px] text-indigo-200 font-bold uppercase mb-1">URSSAF (€)</p>
+                                    <p id="ent-res-cotis-euro" class="text-lg sm:text-xl font-black">1 055 €</p>
                                 </div>
-                                <div class="text-left">
-                                    <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">Revenu imposable</p>
-                                    <p id="ent-res-imposable" class="text-xl font-black">3 300 €</p>
+                                <div>
+                                    <p class="text-[9px] sm:text-[10px] text-indigo-200 font-bold uppercase mb-1">Revenu imposable</p>
+                                    <p id="ent-res-imposable" class="text-lg sm:text-xl font-black">3 300 €</p>
                                 </div>
-                                <div class="text-left">
-                                    <p class="text-[10px] text-indigo-200 font-bold uppercase mb-1">Impôt estimé</p>
-                                    <p id="ent-res-impot-detail" class="text-xl font-black">420 €</p>
+                                <div>
+                                    <p class="text-[9px] sm:text-[10px] text-indigo-200 font-bold uppercase mb-1">Impôt estimé</p>
+                                    <p id="ent-res-impot-detail" class="text-lg sm:text-xl font-black">420 €</p>
                                 </div>
                             </div>
 
-                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-8 border border-white/10 text-center">
-                                <p class="text-[10px] text-indigo-100 font-bold uppercase tracking-widest mb-1">Revenu net final (après impôt)</p>
-                                <div id="ent-res-net-apres-impot" class="text-4xl font-black text-white">3 525 €</div>
-                                <p class="text-[9px] text-indigo-100/70 mt-3 italic leading-tight">Estimation basée sur le barème progressif par tranches (0%, 11%, 30%, 41%, 45%).</p>
+                            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-6 sm:mb-8 border border-white/10 text-center">
+                                <p class="text-[9px] sm:text-[10px] text-indigo-100 font-bold uppercase tracking-widest mb-1">Revenu net final (après impôt)</p>
+                                <div id="ent-res-net-apres-impot" class="text-3xl sm:text-4xl font-black text-white">3 525 €</div>
+                                <p class="text-[8px] sm:text-[9px] text-indigo-100/70 mt-2 italic leading-tight">Estimation basée sur le barème progressif par tranches (0%, 11%, 30%, 41%, 45%).</p>
                             </div>
 
-                            <button onclick="copyEntResult()" class="w-full bg-white text-indigo-600 font-black py-4 rounded-2xl shadow-lg active:scale-95 transition-all">Copier ce résultat</button>
+                            <button onclick="copyEntResult()" class="w-full bg-white text-indigo-600 font-black py-3.5 sm:py-4 rounded-2xl shadow-lg active:scale-95 transition-all text-sm sm:text-base">Copier ce résultat</button>
                         </div>
                     </div>
                 </section>
             </div>
 
             <!-- PEDAGOGIE ACCUEIL (ZONE INCHANGÉE) -->
-            <div id="pedagogie-accueil" class="mt-20 border-t border-slate-200 pt-16">
-                <div class="text-center mb-12">
-                    <h3 class="text-2xl font-black text-slate-800">Comment fonctionne le calcul ?</h3>
-                    <p class="text-slate-500 mt-2">Trois principes simples pour comprendre votre revenu réel en 2025.</p>
+            <div id="pedagogie-accueil" class="mt-16 sm:mt-20 border-t border-slate-200 pt-12 sm:pt-16">
+                <div class="text-center mb-10 sm:mb-12">
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-800">Comment fonctionne le calcul ?</h3>
+                    <p class="text-sm sm:text-slate-500 mt-2">Trois principes simples pour comprendre votre revenu réel en 2025.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 font-black text-xl">01</div>
-                        <h4 class="font-bold text-slate-800 mb-3">Les Cotisations Sociales</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">C'est la différence majeure entre le brut et le net. Elles financent votre retraite, votre santé et votre chômage. Elles représentent environ 22% à 25% du brut.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 font-black text-lg sm:text-xl">01</div>
+                        <h4 class="font-bold text-slate-800 mb-2 sm:mb-3 text-sm sm:text-base">Les Cotisations Sociales</h4>
+                        <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">C'est la différence majeure entre le brut et le net. Elles financent votre retraite, votre santé et votre chômage. Elles représentent environ 22% à 25% du brut.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 font-black text-xl">02</div>
-                        <h4 class="font-bold text-slate-800 mb-3">Le Prélèvement à la Source</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Il s'agit de votre impôt sur le revenu collecté chaque mois. Notre simulateur vous permet d'ajuster votre taux pour voir ce qu'il reste vraiment sur votre compte.</p>
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 font-black text-lg sm:text-xl">02</div>
+                        <h4 class="font-bold text-slate-800 mb-2 sm:mb-3 text-sm sm:text-base">Le Prélèvement à la Source</h4>
+                        <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Il s'agit de votre impôt sur le revenu collecté chaque mois. Notre simulateur vous permet d'ajuster votre taux pour voir ce qu'il reste vraiment sur votre compte.</p>
                     </div>
-                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 font-black text-xl">03</div>
-                        <h4 class="font-bold text-slate-800 mb-3">Le Statut Professionnel</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Que vous soyez Cadre, Non-Cadre ou Auto-entrepreneur, les règles de calcul changent. Nous appliquons automatiquement les barèmes officiels mis à jour pour 2025.</p>
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 font-black text-lg sm:text-xl">03</div>
+                        <h4 class="font-bold text-slate-800 mb-2 sm:mb-3 text-sm sm:text-base">Le Statut Professionnel</h4>
+                        <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Que vous soyez Cadre, Non-Cadre ou Auto-entrepreneur, les règles de calcul changent. Nous appliquons automatiquement les barèmes officiels mis à jour pour 2025.</p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- SECTION INFORMATIONS RICHE - TRANSFORMEE EN CARTES UI STYLE 01/02/03 -->
-        <div id="info-section-container" class="mt-20 hidden">
+        <div id="info-section-container" class="mt-12 sm:mt-20 hidden">
             
             <div class="info-container">
                 <!-- Sommaire Statique Grille -->
-                <div class="bg-white p-10 rounded-[2rem] border border-slate-100 shadow-sm mb-16">
-                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-8 px-4 text-center md:text-left">Contenu détaillé des sections</h4>
+                <div class="bg-white p-6 sm:p-10 rounded-[2rem] border border-slate-100 shadow-sm mb-12 sm:mb-16">
+                    <h4 class="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 sm:mb-8 px-4 text-center md:text-left">Contenu détaillé des sections</h4>
                     <div id="info-toc" class="toc-grid"></div>
                 </div>
 
                 <!-- INFO SALARIÉ RÉ-ORGANISÉE EN 6 CARTES UI -->
-                <div id="info-salarie" class="space-y-12">
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">01</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">💼 1. Le Salaire Brut : Définition et Enjeux</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le salaire brut constitue le montant contractuel initial avant toute déduction fiscale ou sociale obligatoire.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">En France, il sert de base de référence pour l'ensemble des négociations lors d'un recrutement ou d'un entretien annuel d'évaluation.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">C'est sur cette somme que sont indexées vos cotisations pour la retraite, vos droits au chômage et vos indemnités en cas d'arrêt maladie.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Comprendre son brut permet de situer précisément sa valeur sur le marché de l'emploi et de comparer efficacement des offres d'emploi provenant de secteurs différents, car les grilles de salaires sont systématiquement exprimées en brut annuel.</p>
+                <div id="info-salarie" class="space-y-8 sm:space-y-12">
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">01</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">💼 1. Le Salaire Brut : Définition et Enjeux</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le salaire brut constitue le montant contractuel initial avant toute déduction fiscale ou sociale obligatoire.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">En France, il sert de base de référence pour l'ensemble des négociations lors d'un recrutement ou d'un entretien annuel d'évaluation.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">C'est sur cette somme que sont indexées vos cotisations pour la retraite, vos droits au chômage et vos indemnités en cas d'arrêt maladie.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Comprendre son brut permet de situer précisément sa valeur sur le marché de l'emploi et de comparer efficacement des offres d'emploi provenant de secteurs différents, car les grilles de salaires sont systématiquement exprimées en brut annuel.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">02</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">💰 2. Salaire Net : Votre Pouvoir d'Achat Réel</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le salaire net représente la somme effectivement créditée sur votre compte bancaire à chaque fin de mois.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">On distingue le net à payer (avant impôt sur le revenu) et le net après impôt (restant disponible après prélèvement à la source).</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le passage du brut au net implique la déduction d'environ 22% à 25% de charges sociales salariales.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce chiffre est le plus crucial pour votre gestion budgétaire quotidienne, car il détermine votre capacité de remboursement de crédit, votre loyer maximal acceptable et votre épargne disponible.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Il reflète la réalité de votre niveau de vie après l'effort de solidarité nationale.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">02</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">💰 2. Salaire Net : Votre Pouvoir d'Achat Réel</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le salaire net représente la somme effectivement créditée sur votre compte bancaire à chaque fin de mois.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">On distingue le net à payer (avant impôt sur le revenu) et le net après impôt (restant disponible après prélèvement à la source).</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le passage du brut au net implique la déduction d'environ 22% à 25% de charges sociales salariales.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ce chiffre est le plus crucial pour votre gestion budgétaire quotidienne, car il détermine votre capacité de remboursement de crédit, votre loyer maximal acceptable et votre épargne disponible.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Il reflète la réalité de votre niveau de vie après l'effort de solidarité nationale.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">03</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🛡️ 3. Cotisations Sociales : Votre Bouclier Sécuritaire</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Les cotisations sociales ne sont pas de simples prélèvements, mais des contributions ouvrant des droits directs.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Elles financent le système de sécurité sociale français : l'assurance maladie pour le remboursement de vos soins, l'assurance vieillesse pour votre future pension de retraite, et l'assurance chômage.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Cet ensemble garantit une protection collective unique au monde.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Une partie est à la charge de l'employeur (cotisations patronales) et l'autre est déduite de votre salaire (cotisations salariales).</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce mécanisme de solidarité permet à chaque travailleur de bénéficier d'une couverture complète sans avoir à épargner massivement pour sa santé.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">03</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">🛡️ 3. Cotisations Sociales : Votre Bouclier Sécuritaire</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Les cotisations sociales ne sont pas de simples prélèvements, mais des contributions ouvrant des droits directs.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Elles financent le système de sécurité sociale français : l'assurance maladie pour le remboursement de vos soins, l'assurance vieillesse pour votre future pension de retraite, et l'assurance chômage.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Cet ensemble garantit une protection collective unique au monde.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Une partie est à la charge de l'employeur (cotisations patronales) et l'autre est déduite de votre salaire (cotisations salariales).</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ce mécanisme de solidarité permet à chaque travailleur de bénéficier d'une couverture complète sans avoir à épargner massivement pour sa santé.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">04</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">📊 4. Prélèvement à la Source : L'Impôt Contemporain</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Instauré en 2019, le prélèvement à la source permet de collecter l'impôt sur le revenu directement au moment du versement du salaire.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce système élimine le décalage d'un an qui existait auparavant entre la perception des revenus et leur taxation.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le taux est transmis par l'administration fiscale à votre employeur.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Vous avez le choix entre un taux personnalisé (basé sur l'ensemble de votre foyer), un taux neutre ou un taux individualisé au sein du couple.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce mode de collecte simplifie la gestion de trésorerie des ménages et ajuste l'impôt en temps réel en cas de changement de situation.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">04</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">📊 4. Prélèvement à la Source : L'Impôt Contemporain</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Instauré en 2019, le prélèvement à la source permet de collecter l'impôt sur le revenu directement au moment du versement du salaire.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ce système élimine le décalage d'un an qui existait auparavant entre la perception des revenus et leur taxation.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le taux est transmis par l'administration fiscale à votre employeur.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Vous avez le choix entre un taux personnalisé (basé sur l'ensemble de votre foyer), un taux neutre ou un taux individualisé au sein du couple.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ce mode de collecte simplifie la gestion de trésorerie des ménages et ajuste l'impôt en temps réel en cas de changement de situation.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">05</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🎖️ 5. Cadre vs Non-Cadre : Statuts et Retraite</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le statut cadre en France confère des droits et des obligations spécifiques.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Généralement, un cadre supporte des cotisations sociales plus élevées (environ 25% du brut contre 22% pour un non-cadre) en raison de sa participation à des caisses de retraite complémentaire plus avantageuses.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le cadre bénéficie souvent de garanties de prévoyance renforcées et de services dédiés via l'APEC.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Cependant, cette différence de prélèvement se traduit par un salaire net inférieur pour un brut identique par rapport à un profil non-cadre.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">En contrepartie, le statut cadre offre souvent une plus grande autonomie dans l'organisation du temps de travail, souvent régi par un forfait jours annuel.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">05</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">🎖️ 5. Cadre vs Non-Cadre : Statuts et Retraite</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le statut cadre en France confère des droits et des obligations spécifiques.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Généralement, un cadre supporte des cotisations sociales plus élevées (environ 25% du brut contre 22% pour un non-cadre) en raison de sa participation à des caisses de retraite complémentaire plus avantageuses.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le cadre bénéficie souvent de garanties de prévoyance renforcées et de services dédiés via l'APEC.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Cependant, cette différence de prélèvement se traduit par un salaire net inférieur pour un brut identique par rapport à un profil non-cadre.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">En contrepartie, le statut cadre offre souvent une plus grande autonomie dans l'organisation du temps de travail, souvent régi par un forfait jours annuel.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-8 font-black text-xl">06</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">📅 6. Éléments Variables : 13ème mois et Primes</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">La rémunération annuelle peut être composée de nombreux éléments au-delà du salaire de base.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le 13ème mois, les primes d'objectifs, l'intéressement ou la participation peuvent représenter une part significative de vos revenus totaux.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est essentiel d'intégrer ces variables dans votre calcul de brut annuel pour une vision globale.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Les avantages en nature (véhicule de fonction, téléphone) ou les avantages sociaux (tickets restaurant) viennent également compléter votre package global.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Bien que certains soient partiellement exonérés, la plupart de ces compléments sont soumis à l'impôt et aux cotisations sociales classiques.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">06</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">📅 6. Éléments Variables : 13ème mois et Primes</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">La rémunération annuelle peut être composée de nombreux éléments au-delà du salaire de base.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le 13ème mois, les primes d'objectifs, l'intéressement ou la participation peuvent représenter une part significative de vos revenus totaux.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Il est essentiel d'intégrer ces variables dans votre calcul de brut annuel pour une vision globale.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Les avantages en nature (véhicule de fonction, téléphone) ou les avantages sociaux (tickets restaurant) viennent également compléter votre package global.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Bien que certains soient partiellement exonérés, la plupart de ces compléments sont soumis à l'impôt et aux cotisations sociales classiques.</p>
                         </div>
                     </article>
                 </div>
 
                 <!-- INFO ENTREPRENEUR RÉ-ORGANISÉE EN 6 CARTES UI -->
-                <div id="info-entrepreneur" class="space-y-12 hidden">
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">01</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">📈 1. Chiffre d'Affaires : Le Flux d'Entrée Brut</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Pour un auto-entrepreneur, le chiffre d'affaires (CA) est le montant total brut encaissé au titre de ses prestations ou de ses ventes.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Contrairement au salariat, le CA ne constitue jamais un revenu disponible immédiat.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">C'est l'indicator de volume de votre business.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est impératif de suivre rigoureusement son CA mensuel pour respecter les plafonds du régime micro-fiscal (77 700 € pour les services, 188 700 € pour le commerce).</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Une erreur commune est de considérer le CA comme un salaire, alors qu'il doit couvrir vos cotisations sociales, vos frais d'assurance, vos logiciels et votre futur impôt sur le revenu.</p>
+                <div id="info-entrepreneur" class="space-y-8 sm:space-y-12 hidden">
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">01</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">📈 1. Chiffre d'Affaires : Le Flux d'Entrée Brut</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Pour un auto-entrepreneur, le chiffre d'affaires (CA) est le montant total brut encaissé au titre de ses prestations ou de ses ventes.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Contrairement au salariat, le CA ne constitue jamais un revenu disponible immédiat.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">C'est l'indicator de volume de votre business.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Il est impératif de suivre rigoureusement son CA mensuel pour respecter les plafonds du régime micro-fiscal (77 700 € pour les services, 188 700 € pour le commerce).</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Une erreur commune est de considérer le CA comme un salaire, alors qu'il doit couvrir vos cotisations sociales, vos frais d'assurance, vos logiciels et votre futur impôt sur le revenu.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">02</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">💵 2. Revenu Net : La Rémunération de l'Indépendant</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le revenu net de l'auto-entrepreneur est la somme qui reste après le paiement des cotisations URSSAF.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">C'est la base qui servira à financer votre vie personnelle.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Cependant, un entrepreneur avisé doit encore en déduire ses frais réels de fonctionnement pour obtenir son véritable bénéfice.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Contrairement à un salarié, ce net ne comprend aucune provision pour vos congés payés, vos jours de maladie ou vos périodes d'inactivité entre deux contrats.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est conseillé de se fixer une rémunération cible en tenant compte d'une réserve de sécurité de 15% pour anticiper les impondérables.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">02</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">💵 2. Revenu Net : La Rémunération de l'Indépendant</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le revenu net de l'auto-entrepreneur est la somme qui reste après le paiement des cotisations URSSAF.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">C'est la base qui servira à financer votre vie personnelle.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Cependant, un entrepreneur avisé doit encore en déduire ses frais réels de fonctionnement pour obtenir son véritable bénéfice.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Contrairement à un salarié, ce net ne comprend aucune provision pour vos congés payés, vos jours de maladie ou vos périodes d'inactivité entre deux contrats.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Il est conseillé de se fixer une rémunération cible en tenant compte d'une réserve de sécurité de 15% pour anticiper les impondérables.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">03</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">✂️ 3. Abattement Fiscal : Le Revenu Imposable</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">L'administration fiscale applique un abattement forfaitaire sur votre chiffre d'affaires pour calculer votre impôt.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Cet abattement varie selon votre activité : 34% pour les activités libérales (BNC), 50% pour les prestations BIC et 71% pour l'achat-revente.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le montant restant après cet abattement constitue votre "revenu imposable".</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce système simplifié est extrêmement avantageux si vos frais réels sont minimes (consulting à domicile par exemple).</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">En revanche, si vos charges de structure sont élevées, le régime réel pourrait s'avérer plus protecteur.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">03</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">✂️ 3. Abattement Fiscal : Le Revenu Imposable</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">L'administration fiscale applique un abattement forfaitaire sur votre chiffre d'affaires pour calculer votre impôt.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Cet abattement varie selon votre activité : 34% pour les activités libérales (BNC), 50% pour les prestations BIC et 71% pour l'achat-revente.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le montant restant après cet abattement constitue votre "revenu imposable".</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ce système simplifié est extrêmement avantageux si vos frais réels sont minimes (consulting à domicile par exemple).</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">En revanche, si vos charges de structure sont élevées, le régime réel pourrait s'avérer plus protecteur.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">04</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🏦 4. Cotisations URSSAF : Taux et Paiement</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Les cotisations sociales sont calculées selon un pourcentage fixe appliqué directement sur votre chiffre d'affaires encaissé.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Pour les services libéraux, le taux standard tourne autour de 21,1% à 23,1%.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">L'atout majeur de ce régime est l'absence de CA = absence de cotisations.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ces prélèvements financent votre protection sociale obligatoire : assurance maladie, retraite de base, prévoyance et droits à la formation professionnelle.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Le paiement s'effectue mensuellement ou trimestriellement sur le portail autoentrepreneur.urssaf.fr.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">04</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">🏦 4. Cotisations URSSAF : Taux et Paiement</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Les cotisations sociales sont calculées selon un pourcentage fixe appliqué directement sur votre chiffre d'affaires encaissé.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Pour les services libéraux, le taux standard tourne autour de 21,1% à 23,1%.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">L'atout majeur de ce régime est l'absence de CA = absence de cotisations.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ces prélèvements financent votre protection sociale obligatoire : assurance maladie, retraite de base, prévoyance et droits à la formation professionnelle.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Le paiement s'effectue mensuellement ou trimestriellement sur le portail autoentrepreneur.urssaf.fr.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">05</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">⚖️ 5. Impôt sur le Revenu : Barème Progressif 2025</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Sauf si vous avez opté pour le versement libératoire, vos revenus d'indépendant sont intégrés à votre déclaration annuelle globale.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">L'impôt est alors calculé selon le barème progressif par tranches (0%, 11%, 30%, 41%, 45%).</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Notre simulateur utilise précisément ces tranches pour estimer votre impôt sur la base de votre revenu imposable.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Il est crucial de comprendre que chaque euro gagné au-delà d'un certain seuil peut basculer dans une tranche supérieure, impactant lourdement votre net final.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Anticiper cette fiscalité est la clé pour ne pas subir de régularisations douloureuses.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">05</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">⚖️ 5. Impôt sur le Revenu : Barème Progressif 2025</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Sauf si vous avez opté pour le versement libératoire, vos revenus d'indépendant sont intégrés à votre déclaration annuelle globale.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">L'impôt est alors calculé selon le barème progressif par tranches (0%, 11%, 30%, 41%, 45%).</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Notre simulateur utilise précisément ces tranches pour estimer votre impôt sur la base de votre revenu imposable.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Il est crucial de comprendre que chaque euro gagné au-delà d'un certain seuil peut basculer dans une tranche supérieure, impactant lourdement votre net final.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Anticiper cette fiscalité est la clé pour ne pas subir de régularisations douloureuses.</p>
                         </div>
                     </article>
 
-                    <article class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-8 font-black text-xl">06</div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-6">🚀 6. ACRE et Aides : Optimiser son Lancement</h3>
-                        <div class="space-y-4">
-                            <p class="text-slate-500 text-[16px] leading-relaxed">L'ACRE permet aux nouveaux créateurs de bénéficier d'une exonération partielle de cotisations sociales durant les 12 premiers mois d'activité.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Ce dispositif est un levier financier puissant qui permet de diviser par deux environ le poids des charges URSSAF au démarrage.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Elle est accessible aux demandeurs d'emploi, aux jeunes de moins de 26 ans ou aux bénéficiaires de minima sociaux.</p>
-                            <p class="text-slate-500 text-[16px] leading-relaxed">Par ailleurs, des dispositifs comme l'ARCE permettent de percevoir ses allocations chômage sous forme de capital pour investir dans son projet.</p>
+                    <article class="bg-white p-6 sm:p-12 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 sm:mb-8 font-black text-lg sm:text-xl">06</div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-800 mb-4 sm:mb-6">🚀 6. ACRE et Aides : Optimiser son Lancement</h3>
+                        <div class="space-y-3 sm:space-y-4">
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">L'ACRE permet aux nouveaux créateurs de bénéficier d'une exonération partielle de cotisations sociales durant les 12 premiers mois d'activité.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Ce dispositif est un levier financier puissant qui permet de diviser par deux environ le poids des charges URSSAF au démarrage.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Elle est accessible aux demandeurs d'emploi, aux jeunes de moins de 26 ans ou aux bénéficiaires de minima sociaux.</p>
+                            <p class="text-slate-500 text-sm sm:text-[16px] leading-relaxed">Par ailleurs, des dispositifs comme l'ARCE permettent de percevoir ses allocations chômage sous forme de capital pour investir dans son projet.</p>
                         </div>
                     </article>
                 </div>
