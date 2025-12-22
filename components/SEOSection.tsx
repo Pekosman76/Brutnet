@@ -19,7 +19,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
           "name": "Comment calculer le salaire net à partir du brut ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pour calculer votre net sur CalculRevenuNet.fr, vous devez soustraire de votre brut les cotisations sociales (sécurité sociale, chômage, retraite) et le prélèvement à la source. Notre outil intègre les barèmes 2025."
+            "text": "Pour calculer votre net sur CalculRevenuNet.fr, vous devez soustraire de votre brut les cotisations sociales (sécurité sociale, chômage, retraite) et le prélèvement à la source. Notre outil intègre les barèmes 2026."
           }
         },
         {
@@ -61,7 +61,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
   if (type === 'salarie') {
     return (
       <article className="prose prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm mt-12">
-        <h2 className="text-3xl font-bold mb-6 text-slate-900 border-l-4 border-blue-600 pl-4">Comprendre le calcul du salaire net en 2025</h2>
+        <h2 className="text-3xl font-bold mb-6 text-slate-900 border-l-4 border-blue-600 pl-4">Comprendre le calcul du salaire net en 2026</h2>
         
         <p className="text-slate-600 leading-relaxed mb-6">
           Pour calculer son brut en net, vous devez soustraire de votre salaire brut plusieurs éléments essentiels que <strong>CalculRevenuNet.fr</strong> prend en compte automatiquement :
@@ -104,7 +104,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
 
         <h3 className="text-2xl font-bold text-slate-800 mt-10 mb-4">Pourquoi utiliser un calculateur brut en net gratuit ?</h3>
         <p className="text-slate-600 leading-relaxed mb-6">
-          Notre simulateur effectue automatiquement ces calculs complexes en tenant compte des <strong>barèmes 2025</strong>. Que vous soyez cadre ou non-cadre, l'outil ajuste les taux pour vous fournir une estimation fiable en quelques secondes. C'est un allié précieux pour vos entretiens annuels ou vos recherches d'emploi.
+          Notre simulateur effectue automatiquement ces calculs complexes en tenant compte des <strong>barèmes 2026</strong>. Que vous soyez cadre ou non-cadre, l'outil ajuste les taux pour vous fournir une estimation fiable en quelques secondes. C'est un allié précieux pour vos entretiens annuels ou vos recherches d'emploi.
         </p>
 
         <h2 className="text-2xl font-bold mb-6 text-slate-900 border-b border-slate-100 pb-4 pt-8">FAQ CalculRevenuNet.fr</h2>
@@ -153,7 +153,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({ type }) => {
       </p>
 
       <p className="text-slate-600 leading-relaxed mb-6">
-        Notre calculateur sur <strong>CalculRevenuNet.fr</strong> applique les taux spécifiques (BNC, BIC) à jour des dernières réformes de 2025 pour vous donner une vision claire de votre rémunération réelle.
+        Notre calculateur sur <strong>CalculRevenuNet.fr</strong> applique les taux spécifiques (BNC, BIC) à jour des dernières réformes de 2026 pour vous donner une vision claire de votre rémunération réelle.
       </p>
 
       <div className="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 mb-8">
