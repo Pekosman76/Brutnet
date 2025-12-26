@@ -673,7 +673,7 @@
             const revenuImposableAnnuel = caAnnuel * (1 - abattementRate);
             
             const impotAnnuel = calculateIncomeTax(revenuImposableAnnuel);
-            const netFinalAnnuel = netURSSAF_Annuel - impotAnnuel;
+            const netFinalAnnuel = revenuImposableAnnuel - impotAnnuel;
 
             const isAnnuel = entPeriod === 'annuel';
             const displayDivisor = isAnnuel ? 1 : 12;
