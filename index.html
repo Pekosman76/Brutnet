@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net Gratuit 2026</title>
+    <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net & Revenu Net Auto-Entrepreneur</title>
     
     <!-- SEO & Meta -->
-    <meta name="description" content="Simulateur gratuit de conversion salaire brut en net sur CalculRevenuNet.fr. Calculez vos revenus réels pour salariés et auto-entrepreneurs avec les barèmes 2026.">
+    <meta name="description" content="Simulateur gratuit brut en net : conversion salaire brut/net (cadre, non-cadre, public) et estimation du revenu net auto-entrepreneur (URSSAF + impôt). Résultat mensuel et annuel.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://calculrevenunet.fr/" />
     
@@ -67,16 +67,6 @@
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #2563eb; color: white; padding: 1rem; border-radius: 9999px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); opacity: 0; transform: translateY(1rem); pointer-events: none; transition: all 0.3s; z-index: 50; }
         #back-to-top.show { opacity: 100; transform: translateY(0); pointer-events: auto; }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
-  }
-}
-</script>
 </head>
 <body class="bg-[#fcfcfd] text-slate-900 min-h-screen pb-20">
 
@@ -101,8 +91,13 @@
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
         <div class="text-center mb-6 sm:mb-10">
-            <h1 id="main-h1" class="text-3xl sm:text-5xl font-black text-slate-900 mb-3 sm:mb-4 tracking-tight leading-tight">Simulateur de Revenus 2026</h1>
-            <p id="main-p" class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Calculez précisément vos revenus nets après cotisations URSSAF et impôt sur le revenu.</p>
+            <h1 id="main-h1" class="text-3xl sm:text-5xl font-black text-slate-900 mb-3 sm:mb-4 tracking-tight leading-tight">Simulateur Brut en Net & Revenu Net</h1>
+            <p id="main-p" class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Convertissez un salaire brut en net (cadre, non-cadre, public) et estimez votre revenu net en auto-entrepreneur après URSSAF et impôt.</p>
+
+            <!-- Phrase SEO supplémentaire (accueil) -->
+            <p id="main-seo" class="text-xs sm:text-sm text-slate-500 max-w-3xl mx-auto mt-3 leading-relaxed">
+                Outil gratuit de <strong>calcul brut net</strong> : salaire <strong>brut → net</strong>, net avant/après impôt (prélèvement à la source) et estimation du <strong>revenu net micro-entrepreneur</strong> à partir du chiffre d’affaires.
+            </p>
         </div>
 
         <div id="tab-container" class="flex p-1 bg-slate-200/50 rounded-2xl w-full max-w-md mx-auto mb-8 sm:mb-12 shadow-inner">
@@ -497,7 +492,7 @@
 
     <script>
         const CHARGES_RATES = { 'non-cadre': 0.22, 'cadre': 0.25, 'public': 0.15 };
-        const ENTREPRENEUR_RATES = { 'bnc': 0.211, 'bic-services': 0.212, 'bic-vente': 0.123 };
+        const ENTREPRENEUR_RATES = { 'bnc': 0.256, 'bic-services': 0.212, 'bic-vente': 0.123 };
         
         let activeTab = 'salarie';
         let currentView = 'calculator';
@@ -512,14 +507,16 @@
                 document.getElementById('calculator-view').classList.remove('hidden');
                 document.getElementById('info-section-container').classList.add('hidden');
                 document.getElementById('back-to-calc').classList.add('hidden');
-                document.getElementById('main-h1').innerText = 'Simulateur de Revenus 2026';
+                document.getElementById('main-h1').innerText = 'Simulateur Brut en Net & Revenu Net';
                 document.getElementById('main-p').classList.remove('hidden');
+                document.getElementById('main-seo').classList.remove('hidden');
             } else {
                 document.getElementById('calculator-view').classList.add('hidden');
                 document.getElementById('info-section-container').classList.remove('hidden');
                 document.getElementById('back-to-calc').classList.remove('hidden');
                 document.getElementById('main-h1').innerText = 'Informations & Conseils';
                 document.getElementById('main-p').classList.add('hidden');
+                document.getElementById('main-seo').classList.add('hidden');
                 updateTOC();
             }
             refreshDisplay();
