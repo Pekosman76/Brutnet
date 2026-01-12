@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net & Revenu Net Auto-Entrepreneur</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2367869499715237"
-     crossorigin="anonymous"></script>
+        <script>
+        function loadAdsense() {
+        if (window.__adsenseLoaded) return;
+        window.__adsenseLoaded = true;
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2367869499715237";
+        s.crossOrigin = "anonymous";
+        document.head.appendChild(s);
+        }
+        </script>
+
+
+        <meta name="description" content="Simulateur gratuit brut en net : conversion salaire brut/net (cadre, non-cadre, public) et estimation du revenu net auto-entrepreneur (URSSAF + impôt). Résultat mensuel et annuel.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://calculrevenunet.fr/" />
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body class="bg-[#fcfcfd] text-slate-900 min-h-screen pb-20">
+
+
+        <!-- Bandeau cookies RGPD -->
+        <div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#0f172a;color:#fff;padding:14px 16px;z-index:9999;font-size:12px;display:none;">
+        <div style="max-width:1100px;margin:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;">
+        <div>Ce site utilise des cookies publicitaires (Google AdSense). Vous pouvez accepter ou refuser.</div>
+        <div style="display:flex;gap:8px;">
+        <button onclick="acceptCookies()" style="background:#2563eb;color:#fff;padding:8px 12px;border-radius:10px;font-weight:800;border:none;">Accepter</button>
+        <button onclick="refuseCookies()" style="background:#334155;color:#fff;padding:8px 12px;border-radius:10px;font-weight:800;border:none;">Refuser</button>
+        </div>
+        </div>
+        </div>
     <!-- SEO & Meta -->
     <meta name="description" content="Simulateur gratuit brut en net : conversion salaire brut/net (cadre, non-cadre, public) et estimation du revenu net auto-entrepreneur (URSSAF + impôt). Résultat mensuel et annuel.">
     <meta name="robots" content="index, follow">
@@ -745,6 +779,20 @@
             handleSalaryBrutChange();
             handleEntChange();
         };
+        function acceptCookies() {
+        localStorage.setItem('cookieConsent', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+        loadAdsense();
+        }
+        function refuseCookies() {
+        localStorage.setItem('cookieConsent', 'refused');
+        document.getElementById('cookie-banner').style.display = 'none';
+        }
+        window.addEventListener('load', function () {
+        const consent = localStorage.getItem('cookieConsent');
+        if (consent === 'accepted') loadAdsense();
+        else if (!consent) document.getElementById('cookie-banner').style.display = 'block';
+        });
     </script>
 </body>
 </html>
