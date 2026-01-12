@@ -241,6 +241,39 @@
                 </section>
             </div>
 
+            <section id="explications" class="mt-12 sm:mt-16 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900 mb-3">Comment est calculé votre revenu net (brut → net) ?</h2>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                CalculRevenuNet.fr est un simulateur gratuit qui vous aide à estimer rapidement ce qu’il “reste” réellement sur votre compte,
+                en partant d’un salaire brut (salarié) ou d’un chiffre d’affaires (micro-entrepreneur). L’objectif est pédagogique : comprendre
+                la différence entre brut, net avant impôt et net après impôt, et visualiser l’impact des principaux paramètres.
+            </p>
+
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-800 mt-6 mb-2">1) Salarié : du brut au net, puis au net après impôt</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                Le passage du brut au net correspond principalement aux cotisations sociales salariales. Elles financent notamment la protection sociale
+                (maladie, retraite, chômage) et varient selon le statut (cadre, non-cadre, public). Le simulateur applique un taux moyen pour vous donner
+                un ordre de grandeur cohérent. Ensuite, vous pouvez ajouter votre taux de prélèvement à la source pour obtenir une estimation du net après impôt,
+                c’est-à-dire le montant réellement disponible chaque mois.
+            </p>
+
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-800 mt-6 mb-2">2) Micro-entrepreneur : du chiffre d’affaires au net final</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                Pour un auto-entrepreneur, le chiffre d’affaires n’est pas un salaire. Le simulateur commence par retirer les cotisations URSSAF selon la nature
+                de l’activité (libéral/BNC, services/BIC, vente). Il estime ensuite le revenu imposable via l’abattement forfaitaire du régime micro, puis calcule
+                un impôt indicatif via le barème progressif. Le “net final” affiché est une approximation utile pour se fixer un objectif de CA et anticiper
+                l’impact des charges et de l’impôt.
+            </p>
+
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-800 mt-6 mb-2">3) Limites et bon usage</h3>
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                Les résultats sont indicatifs : ils ne remplacent pas une fiche de paie, un simulateur officiel de l’administration, ni un conseil personnalisé.
+                Certains cas (primes, mutuelle, avantages, exonérations, versement libératoire, situations familiales, aides, ACRE, plafonds, etc.) peuvent modifier
+                fortement le résultat. Utilisez cet outil pour comparer des scénarios et comprendre les ordres de grandeur, puis vérifiez avec vos documents ou un
+                professionnel si nécessaire.
+            </p>
+            </section>
+
             <!-- PEDAGOGIE ACCUEIL (ZONE INCHANGÉE) -->
             <div id="pedagogie-accueil" class="mt-16 sm:mt-20 border-t border-slate-200 pt-12 sm:pt-16">
                 <div class="text-center mb-10 sm:mb-12">
@@ -264,6 +297,17 @@
                         <p class="text-slate-500 text-xs sm:text-sm leading-relaxed">Que vous soyez Cadre, Non-Cadre ou Auto-entrepreneur, les règles de calcul changent. Nous appliquons automatiquement les barèmes officiels mis à jour pour 2026.</p>
                     </div>
                 </div>
+                <section id="faq" class="mt-12 sm:mt-16 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+                <h2 class="text-xl sm:text-2xl font-black text-slate-900 mb-4">FAQ (questions fréquentes)</h2>
+                <div class="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                    <p><strong>Le résultat est-il exact ?</strong> C’est une estimation basée sur des taux moyens et des règles générales. Votre bulletin de paie,
+                    votre situation fiscale et certains avantages peuvent modifier le net.</p>
+                    <p><strong>Cadre vs non-cadre : pourquoi le net change ?</strong> Les cotisations et la retraite complémentaire diffèrent, ce qui impacte le net.</p>
+                    <p><strong>Micro-entrepreneur : le “net final” inclut-il les frais ?</strong> Non. Les frais réels (assurance, logiciels, matériel, déplacements)
+                    restent à déduire pour obtenir votre bénéfice réel.</p>
+                    <p><strong>Mes données sont-elles enregistrées ?</strong> Non : les montants saisis servent uniquement aux calculs locaux dans votre navigateur.</p>
+                </div>
+                </section>
             </div>
         </div>
 
@@ -485,7 +529,11 @@
     </p>
 
   </div>
-
+  <div style="max-width: 900px; margin: 18px auto 0; font-size: 12px; line-height: 1.6; color: #64748b; padding: 0 16px; text-align:left;">
+  <p style="margin: 0 0 8px;"><strong>À propos :</strong> CalculRevenuNet.fr a été créé pour aider à comprendre rapidement la différence entre salaire brut,
+  salaire net et net après impôt, ainsi que l’estimation d’un revenu net en micro-entreprise. Le site privilégie une approche simple et transparente :
+  les calculs sont réalisés directement dans votre navigateur, sans création de compte et sans enregistrement des montants saisis.</p>
+</div>
   <p style="margin-top:16px;">
     © 2026 CalculRevenuNet.fr – Estimation non contractuelle basée sur les barèmes fiscaux 2026.
   </p>
