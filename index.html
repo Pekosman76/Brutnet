@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalculRevenuNet.fr – Simulateur Salaire Brut Net & Revenu Net Auto-Entrepreneur</title>
+    <title>Calcul revenu net 2026 : brut en net, net en brut, salaire net</title>
         <script>
         function loadAdsense() {
         if (window.__adsenseLoaded) return;
@@ -17,7 +17,7 @@
         </script>
 
 
-        <meta name="description" content="Simulateur gratuit brut en net : conversion salaire brut/net (cadre, non-cadre, public) et estimation du revenu net auto-entrepreneur (URSSAF + impôt). Résultat mensuel et annuel.">
+        <meta name="description" content="Calculez votre revenu net 2026 : brut en net, net en brut, salaire net mensuel et annuel avec explications pédagogiques, exemples concrets et FAQ complète.">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="https://calculrevenunet.fr/" />
 
@@ -26,7 +26,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
         <script src="https://cdn.tailwindcss.com"></script>
-        </head>
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Calcul Revenu Net","url":"https://calculrevenunet.fr/","potentialAction":{"@type":"SearchAction","target":"https://calculrevenunet.fr/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Comment calculer un salaire net à partir du brut ?","acceptedAnswer":{"@type":"Answer","text":"On retire les cotisations salariales du brut, puis on applique le prélèvement à la source pour obtenir un net après impôt."}},{"@type":"Question","name":"Quelle différence entre net à payer et net imposable ?","acceptedAnswer":{"@type":"Answer","text":"Le net imposable sert de base fiscale et peut être différent du net réellement versé."}}]}</script>
+</head>
         <body class="bg-[#fcfcfd] text-slate-900 min-h-screen pb-20">
 
 
@@ -101,6 +103,9 @@
         
         #back-to-top { position: fixed; bottom: 2rem; right: 2rem; background-color: #2563eb; color: white; padding: 1rem; border-radius: 9999px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); opacity: 0; transform: translateY(1rem); pointer-events: none; transition: all 0.3s; z-index: 50; }
         #back-to-top.show { opacity: 100; transform: translateY(0); pointer-events: auto; }
+
+        .reading-content p, .reading-content li { max-width: 70ch; }
+        .reading-content ul { padding-left: 1.2rem; list-style: disc; }
     </style>
 </head>
 <body class="bg-[#fcfcfd] text-slate-900 min-h-screen pb-20">
@@ -116,9 +121,13 @@
                     </div>
                     <span class="text-lg sm:text-2xl font-black text-slate-900 tracking-tight whitespace-nowrap">Calcul<span class="text-blue-600">RevenuNet</span>.fr</span>
                 </div>
-                <nav class="flex gap-6 sm:gap-8 text-sm font-semibold w-full sm:w-auto justify-center">
+                <nav class="flex flex-wrap gap-4 sm:gap-6 text-sm font-semibold w-full sm:w-auto justify-center items-center">
                     <button id="nav-home" onclick="showView('calculator')" class="transition-colors py-1.5 sm:py-2 border-b-2 view-active">Accueil</button>
-                    <button id="nav-info" onclick="showView('info')" class="transition-colors py-1.5 sm:py-2 border-b-2 view-inactive">Information</button>
+                    <button id="nav-info" onclick="showView('info')" class="transition-colors py-1.5 sm:py-2 border-b-2 view-inactive">Guide</button>
+                    <a href="/a-propos/" class="text-slate-600 hover:text-blue-600">À propos</a>
+                    <a href="/mentions-legales/" class="text-slate-600 hover:text-blue-600">Mentions légales</a>
+                    <a href="/politique-de-confidentialite/" class="text-slate-600 hover:text-blue-600">Confidentialité</a>
+                    <a href="/contact/" class="text-slate-600 hover:text-blue-600">Contact</a>
                 </nav>
             </div>
         </div>
@@ -126,8 +135,8 @@
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10">
         <div class="text-center mb-6 sm:mb-10">
-            <h1 id="main-h1" class="text-3xl sm:text-5xl font-black text-slate-900 mb-3 sm:mb-4 tracking-tight leading-tight">Simulateur Brut en Net & Revenu Net</h1>
-            <p id="main-p" class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Convertissez un salaire brut en net (cadre, non-cadre, public) et estimez votre revenu net en auto-entrepreneur après URSSAF et impôt.</p>
+            <h1 id="main-h1" class="text-3xl sm:text-5xl font-black text-slate-900 mb-3 sm:mb-4 tracking-tight leading-tight">Calcul revenu net 2026 : Brut en net, net en brut, charges et explications</h1>
+            <p id="main-p" class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">Calculez votre salaire net à partir du brut, estimez un net en brut, comprenez les cotisations et comparez les situations cadre, non-cadre et indépendantes grâce à un simulateur gratuit.</p>
 
             <!-- Phrase SEO supplémentaire (accueil) -->
             <p id="main-seo" class="text-xs sm:text-sm text-slate-500 max-w-3xl mx-auto mt-3 leading-relaxed">
@@ -505,6 +514,26 @@
             </div>
         </div>
 
+        <section class="reading-content mt-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200">
+            <h2 class="text-2xl sm:text-3xl font-black mb-4">Comment calculer un salaire net à partir du brut</h2>
+            <p class="text-slate-600 leading-relaxed">Le salaire net est obtenu après déduction des cotisations salariales du salaire brut. Ces cotisations financent la protection sociale : assurance maladie, retraite, chômage et contributions de solidarité. À titre pédagogique, un taux global autour de 22 % à 25 % permet d'obtenir une estimation rapide dans le secteur privé.</p>
+            <p class="text-slate-600 leading-relaxed">Exemples : 2 000 € brut donnent souvent un net proche de 1 560 € ; 2 500 € brut donnent environ 1 950 € ; 3 500 € brut donnent autour de 2 700 €. Pour un même brut, le net cadre peut être un peu inférieur au net non-cadre en raison de cotisations complémentaires spécifiques.</p>
+            <h2 class="text-2xl sm:text-3xl font-black mt-8 mb-4">Comment passer du net au brut</h2>
+            <p class="text-slate-600 leading-relaxed">Formule simplifiée : brut ≈ net / (1 - taux de charges). Si vous ciblez 2 000 € net avec un taux de 23 %, le brut estimé est 2 597 €. Cette approche est utile pour préparer une négociation, tout en gardant en tête que la fiche de paie réelle dépend de nombreux paramètres individuels.</p>
+            <h2 class="text-2xl sm:text-3xl font-black mt-8 mb-4">Quelles charges sont déduites du salaire brut ?</h2>
+            <ul class="space-y-2 text-slate-600 leading-relaxed">
+              <li>Sécurité sociale (maladie, maternité, invalidité, décès).</li>
+              <li>Retraite de base et retraite complémentaire.</li>
+              <li>CSG / CRDS.</li>
+              <li>Contributions chômage.</li>
+              <li>Mutuelle et prévoyance selon l'entreprise.</li>
+            </ul>
+            <h2 class="text-2xl sm:text-3xl font-black mt-8 mb-4">Différence entre net à payer et net imposable</h2>
+            <p class="text-slate-600 leading-relaxed">Le net à payer correspond au montant versé. Le net imposable est la base fiscale transmise à l'administration et peut être différent selon les lignes de paie. Il est donc essentiel de ne pas confondre ces deux notions lors d'une simulation.</p>
+            <h2 class="text-2xl sm:text-3xl font-black mt-8 mb-4">FAQ et glossaire express</h2>
+            <p class="text-slate-600 leading-relaxed">Questions fréquentes : le simulateur est-il officiel ? Non, il est indicatif. Les montants sont-ils enregistrés ? Non, le calcul est local. Peut-on calculer un net annuel ? Oui, en basculant de périodicité. Glossaire : brut = avant cotisations ; net = après cotisations ; net imposable = base fiscale ; CSG/CRDS = contributions sociales.</p>
+        </section>
+
         <div id="back-to-calc" class="mt-12 text-center hidden">
             <button onclick="showView('calculator')" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:bg-blue-700 transition-all flex items-center gap-2 mx-auto">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -521,56 +550,17 @@
         </svg>
     </button>
 
-<footer class="mt-20 border-t border-slate-200 bg-white py-12 text-center text-slate-500 text-sm">
-  <div style="max-width: 900px; margin: 14px auto 0; font-size: 11px; line-height: 1.5; color: #64748b; padding: 0 16px;">
-
-    <p style="margin: 0 0 8px;">
-      <strong>Mentions légales :</strong>
-      Le site calculrevenunet.fr propose des simulateurs de revenus
-      (brut/net, micro-entrepreneur, impôt) à titre strictement informatif.
-      Les résultats fournis sont indicatifs et n’ont aucune valeur contractuelle
-      ou légale. Seules les administrations fiscales font foi.
-    </p>
-
-    <p style="margin: 0 0 8px;">
-      <strong>Éditeur :</strong> calculrevenunet.fr – Simulateur de revenus.  
-      <strong>Contact :</strong>
-      <a href="mailto:laloumaxime951@gmail.com"
-         style="color:#0063B1; font-weight:700; text-decoration:none;">
-        laloumaxime951@gmail.com
-      </a>
-    </p>
-
-    <p style="margin: 0 0 8px;">
-      <strong>Hébergement :</strong>
-      OVHcloud SAS – 2 rue Kellermann, 59100 Roubaix – France.
-    </p>
-
-    <p style="margin: 0;">
-      <strong>Confidentialité :</strong>
-      Ce site ne collecte ni ne conserve directement de données personnelles.
-      Les données saisies servent uniquement aux calculs effectués localement
-      dans votre navigateur.
-      Toutefois, des services tiers tels que Google AdSense peuvent utiliser
-      des cookies ou des identifiants afin de diffuser des annonces
-      personnalisées ou non.
-      Plus d’informations sur l’utilisation des données par Google :
-      <a href="https://policies.google.com/technologies/ads"
-         target="_blank" rel="noopener noreferrer"
-         style="color:#0063B1; text-decoration:underline;">
-        https://policies.google.com/technologies/ads
-      </a>.
-    </p>
-
+<footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-600 text-sm">
+  <div class="max-w-5xl mx-auto px-4 leading-7">
+    <p><strong>Outil indicatif basé sur les barèmes légaux 2026.</strong> Seuls les organismes officiels ou votre employeur peuvent valider définitivement votre salaire net.</p>
+    <p class="mt-3"><strong>Mentions légales :</strong> Le site calculrevenunet.fr propose un simulateur de conversion brut/net à titre strictement indicatif. Les résultats fournis n’ont aucune valeur légale.</p>
+    <p class="mt-3"><strong>Éditeur :</strong> calculrevenunet.fr – Simulateur revenu net. <strong>Contact :</strong> <a class="text-blue-700" href="mailto:laloumaxime951@gmail.com">laloumaxime951@gmail.com</a></p>
+    <p class="mt-3"><strong>Hébergement :</strong> OVHcloud SAS – 2 rue Kellermann, 59100 Roubaix – France.</p>
+    <p class="mt-3">Ce site ne collecte ni ne conserve directement de données personnelles. Toutefois, des services tiers tels que Google AdSense peuvent utiliser des cookies ou des identifiants afin de diffuser des annonces personnalisées ou non.</p>
+    <p class="mt-2">En savoir plus : <a class="text-blue-700 underline" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></p>
+    <p class="mt-4"><a href="/a-propos/">À propos</a> | <a href="/mentions-legales/">Mentions légales</a> | <a href="/politique-de-confidentialite/">Politique de confidentialité</a> | <a href="/contact/">Contact</a></p>
+    <p class="mt-2">© <span id="year"></span> calculrevenunet.fr</p>
   </div>
-  <div style="max-width: 900px; margin: 18px auto 0; font-size: 12px; line-height: 1.6; color: #64748b; padding: 0 16px; text-align:left;">
-  <p style="margin: 0 0 8px;"><strong>À propos :</strong> CalculRevenuNet.fr a été créé pour aider à comprendre rapidement la différence entre salaire brut,
-  salaire net et net après impôt, ainsi que l’estimation d’un revenu net en micro-entreprise. Le site privilégie une approche simple et transparente :
-  les calculs sont réalisés directement dans votre navigateur, sans création de compte et sans enregistrement des montants saisis.</p>
-</div>
-  <p style="margin-top:16px;">
-    © 2026 CalculRevenuNet.fr – Estimation non contractuelle basée sur les barèmes fiscaux 2026.
-  </p>
 </footer>
 
     <script>
@@ -590,7 +580,7 @@
                 document.getElementById('calculator-view').classList.remove('hidden');
                 document.getElementById('info-section-container').classList.add('hidden');
                 document.getElementById('back-to-calc').classList.add('hidden');
-                document.getElementById('main-h1').innerText = 'Simulateur Brut en Net & Revenu Net';
+                document.getElementById('main-h1').innerText = 'Calcul revenu net 2026 : Brut en net, net en brut, charges et explications';
                 document.getElementById('main-p').classList.remove('hidden');
                 document.getElementById('main-seo').classList.remove('hidden');
             } else {
@@ -788,6 +778,7 @@
         localStorage.setItem('cookieConsent', 'refused');
         document.getElementById('cookie-banner').style.display = 'none';
         }
+        document.getElementById("year").textContent = new Date().getFullYear();
         window.addEventListener('load', function () {
         const consent = localStorage.getItem('cookieConsent');
         if (consent === 'accepted') loadAdsense();
