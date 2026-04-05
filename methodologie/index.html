@@ -1,1 +1,102 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Méthodologie du simulateur | CalculRevenuNet.fr</title><meta name="description" content="Hypothèses de calcul, limites, sources publiques et méthode de mise à jour du simulateur revenu net."><link rel="canonical" href="https://calculrevenunet.fr/methodologie/"><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-[#fcfcfd] text-slate-800"><main class="max-w-4xl mx-auto px-4 py-10 leading-8"><h1 class="text-3xl font-black mb-6">Méthodologie du simulateur</h1><p>Cette page présente la logique générale utilisée pour estimer le revenu net salarié et micro-entrepreneur. L'objectif est la transparence : expliquer ce qui est pris en compte, ce qui relève d'une hypothèse simplificatrice, et ce qui doit être validé avec une source officielle ou un professionnel.</p><h2 class="text-2xl font-bold mt-8 mb-3">Principe général</h2><p>Le simulateur applique des taux indicatifs de cotisations selon le profil choisi, puis calcule un net avant impôt et un net après impôt à partir du prélèvement à la source saisi par l'utilisateur. Pour le mode micro-entrepreneur, il estime les cotisations, le revenu imposable, puis l'impôt indicatif selon un barème progressif.</p><h2 class="text-2xl font-bold mt-8 mb-3">Hypothèses simplificatrices</h2><ul class="list-disc pl-6"><li>Taux moyens par statut, non personnalisés à chaque convention.</li><li>Estimation fiscale simplifiée ne couvrant pas tous les crédits/réductions.</li><li>Traitement générique des primes et avantages variables.</li></ul><h2 class="text-2xl font-bold mt-8 mb-3">Limites connues</h2><p>Le simulateur n'interprète pas automatiquement les cas particuliers : exonérations spécifiques, dispositifs sectoriels, situations familiales détaillées, régularisations de paie, ou règles internes d'entreprise. Il faut donc considérer le résultat comme un ordre de grandeur utile, pas comme une valeur contractuelle.</p><h2 class="text-2xl font-bold mt-8 mb-3">Mise à jour des paramètres</h2><p>Les paramètres sont revus régulièrement à partir des informations publiques disponibles. Lorsqu'un écart est signalé par un utilisateur, le point est vérifié puis corrigé si nécessaire pour conserver la pertinence pédagogique de l'outil.</p><h2 class="text-2xl font-bold mt-8 mb-3">Sources publiques de référence</h2><ul class="list-disc pl-6"><li><a class="text-blue-700 underline" href="https://www.urssaf.fr/" target="_blank" rel="noopener">URSSAF</a></li><li><a class="text-blue-700 underline" href="https://www.service-public.fr/" target="_blank" rel="noopener">Service-Public.fr</a></li><li><a class="text-blue-700 underline" href="https://www.impots.gouv.fr/" target="_blank" rel="noopener">impots.gouv.fr</a></li><li><a class="text-blue-700 underline" href="https://www.economie.gouv.fr/" target="_blank" rel="noopener">economie.gouv.fr</a></li></ul><div class="bg-amber-50 border border-amber-100 rounded-2xl p-5 mt-8"><p class="font-semibold">Avertissement : ce simulateur est un outil d'aide à la compréhension. Il ne remplace pas un conseil fiscal personnalisé ni une validation officielle.</p></div></main></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Méthodologie du simulateur | CalculRevenuNet.fr</title>
+  <meta name="description" content="Hypothèses de calcul, limites, sources publiques et méthode de mise à jour du simulateur revenu net.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://calculrevenunet.fr/methodologie/">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .view-active { color: #2563eb !important; border-color: #2563eb !important; }
+    .view-inactive { color: #64748b !important; border-color: transparent !important; }
+    .view-inactive:hover { color: #2563eb !important; }
+    .content p { margin-top: 1rem; }
+    .content ul { list-style: disc; padding-left: 1.2rem; margin-top: 1rem; }
+  </style>
+</head>
+<body class="bg-[#fcfcfd] text-slate-900 min-h-screen flex flex-col">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center py-3 sm:py-0 sm:h-20">
+        <a href="/" class="flex items-center gap-2 mb-2 sm:mb-0">
+          <div class="w-10 h-10 bg-blue-600 rounded-xl flex-shrink-0 flex items-center justify-center text-white shadow-lg shadow-blue-200 scale-90 sm:scale-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <span class="text-lg sm:text-2xl font-black text-slate-900 tracking-tight whitespace-nowrap">Calcul<span class="text-blue-600">RevenuNet</span>.fr</span>
+        </a>
+        <nav class="flex flex-wrap gap-4 sm:gap-6 text-sm font-semibold w-full sm:w-auto justify-center items-center">
+          <a href="/" class="transition-colors py-1.5 sm:py-2 border-b-2 view-inactive">Accueil</a>
+          <a href="/guide/salaire-brut-net/" class="transition-colors py-1.5 sm:py-2 border-b-2 view-inactive">Guide</a>
+          <a href="/a-propos/" class="text-slate-600 hover:text-blue-600">À propos</a>
+          <a href="/mentions-legales/" class="text-slate-600 hover:text-blue-600">Mentions légales</a>
+          <a href="/politique-de-confidentialite/" class="text-slate-600 hover:text-blue-600">Confidentialité</a>
+          <a href="/contact/" class="text-slate-600 hover:text-blue-600">Contact</a>
+          <a href="/methodologie/" class="transition-colors py-1.5 sm:py-2 border-b-2 view-active">Méthodologie</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-10 mb-12 sm:mb-16">
+    <article class="bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-slate-200 content leading-8 text-slate-700">
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">Méthodologie du simulateur</h1>
+      <p>Cette page présente la logique générale utilisée pour estimer le revenu net salarié et micro-entrepreneur. L'objectif est la transparence : expliquer ce qui est pris en compte, ce qui relève d'une hypothèse simplificatrice, et ce qui doit être validé avec une source officielle ou un professionnel.</p>
+
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-10 mb-4">Principe général</h2>
+      <p>Le simulateur applique des taux indicatifs de cotisations selon le profil choisi, puis calcule un net avant impôt et un net après impôt à partir du prélèvement à la source saisi par l'utilisateur. Pour le mode micro-entrepreneur, il estime les cotisations, le revenu imposable, puis l'impôt indicatif selon un barème progressif.</p>
+
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-10 mb-4">Hypothèses simplificatrices</h2>
+      <ul>
+        <li>Taux moyens par statut, non personnalisés à chaque convention.</li>
+        <li>Estimation fiscale simplifiée ne couvrant pas tous les crédits/réductions.</li>
+        <li>Traitement générique des primes et avantages variables.</li>
+      </ul>
+
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-10 mb-4">Limites connues</h2>
+      <p>Le simulateur n'interprète pas automatiquement les cas particuliers : exonérations spécifiques, dispositifs sectoriels, situations familiales détaillées, régularisations de paie, ou règles internes d'entreprise. Il faut donc considérer le résultat comme un ordre de grandeur utile, pas comme une valeur contractuelle.</p>
+
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-10 mb-4">Mise à jour des paramètres</h2>
+      <p>Les paramètres sont revus régulièrement à partir des informations publiques disponibles. Lorsqu'un écart est signalé par un utilisateur, le point est vérifié puis corrigé si nécessaire pour conserver la pertinence pédagogique de l'outil.</p>
+
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-10 mb-4">Sources publiques de référence</h2>
+      <ul>
+        <li><a class="text-blue-700 underline" href="https://www.urssaf.fr/" target="_blank" rel="noopener">URSSAF</a></li>
+        <li><a class="text-blue-700 underline" href="https://www.service-public.fr/" target="_blank" rel="noopener">Service-Public.fr</a></li>
+        <li><a class="text-blue-700 underline" href="https://www.impots.gouv.fr/" target="_blank" rel="noopener">impots.gouv.fr</a></li>
+        <li><a class="text-blue-700 underline" href="https://www.economie.gouv.fr/" target="_blank" rel="noopener">economie.gouv.fr</a></li>
+      </ul>
+
+      <div class="bg-amber-50 border border-amber-100 rounded-2xl p-5 mt-8">
+        <p class="font-semibold mt-0">Avertissement : ce simulateur est un outil d'aide à la compréhension. Il ne remplace pas un conseil fiscal personnalisé ni une validation officielle.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white py-12 text-slate-600 text-sm">
+    <div class="max-w-5xl mx-auto px-4 leading-7">
+      <p><strong>Outil indicatif basé sur les barèmes légaux 2026.</strong> Seuls les organismes officiels ou votre employeur peuvent valider définitivement votre salaire net.</p>
+      <p class="mt-3"><strong>Mentions légales :</strong> Le site calculrevenunet.fr propose un simulateur de conversion brut/net à titre strictement indicatif. Les résultats fournis n'ont aucune valeur légale.</p>
+      <p class="mt-3"><strong>Éditeur :</strong> calculrevenunet.fr – Simulateur revenu net. <strong>Contact :</strong> <a class="text-blue-700" href="mailto:laloumaxime951@gmail.com">laloumaxime951@gmail.com</a></p>
+      <p class="mt-3"><strong>Hébergement :</strong> OVHcloud SAS – 2 rue Kellermann, 59100 Roubaix – France.</p>
+      <p class="mt-3">Ce site ne collecte ni ne conserve directement de données personnelles. Toutefois, des services tiers tels que Google AdSense peuvent utiliser des cookies ou des identifiants afin de diffuser des annonces personnalisées ou non.</p>
+      <p class="mt-2">En savoir plus : <a class="text-blue-700 underline" href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></p>
+      <p class="mt-4"><a href="/guide/salaire-brut-net/">Guide</a> | <a href="/a-propos/">À propos</a> | <a href="/contact/">Contact</a> | <a href="/methodologie/">Méthodologie</a> | <a href="/politique-publicitaire/">Politique publicitaire</a> | <a href="/mentions-legales/">Mentions légales</a> | <a href="/politique-de-confidentialite/">Confidentialité</a></p>
+      <p class="mt-2">© <span id="year"></span> calculrevenunet.fr</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
